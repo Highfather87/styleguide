@@ -15,7 +15,7 @@ layout: default
     </hgroup>
 
     <div class="brand-element-description">
-      <p>Sass placeholders are a way to <strong>regroup common styles</strong> used by multiple selectors.</p>
+      <p>Sass placeholders are a way to <strong>regroup common styles</strong> used by multiple selectors. They can be <a href="https://twitter.com/jgthms/status/646270450184667136">unpredictable</a>.</p>
       <p>You <em>define</em> a placeholder with the <strong>percentage</strong> sign <code>%placeholder</code>.</p>
       <p>You <em>call</em> a placeholder with the <strong>@extend</strong> rule <code>@extend %placeholder</code>.</p>
       <p>They are more complicated than mixins:</p>
@@ -23,7 +23,7 @@ layout: default
         <li>they <strong>don't</strong> have parameters</li>
         <li>they <strong>do</strong> prevent the same code from being repeated</li>
       </ul>
-      <p>The only real asset is that it's really <abbr title="Don't Repeat Yourself">DRY</abbr>.</p>
+      <p>The only real benefit is that it's really <abbr title="Don't Repeat Yourself">DRY</abbr>.</p>
       <p>Example:</p>
 {% highlight sass %}
 %control
@@ -59,8 +59,58 @@ layout: default
 
     <div class="brand-element-code">
 {% highlight sass %}
+%arrow
+
+%control
+
+%element
+
+%element-with-icon
+
+%element-icon
+
+%ellipsis
+
+%form-group
+
+%header-link
+
+%loader
+
+%loader-overlay
+
+%log-form
+
+%log-route
+
+%section
 {% endhighlight %}
 {% highlight sass %}
+adds a small "v" arrow
+
+for form controls: checkbox, input, radio, select
+
+for 32px high interactive elements: button, control
+
+if it has an icon, like the checkbox
+
+for the actual icon in the element
+
+to add an ellipsis "..." if the text doesn't fit on one line
+
+for form control containers (label + control)
+
+for the links (login, wishlist, basket) in the header
+
+the loading spinner
+
+adds an overlay with a loader inside
+
+for the login/signup/resetpassword forms
+
+for the login/signup/resetpassword routes
+
+for a small uppercase title
 {% endhighlight %}
     </div>
   </section>
