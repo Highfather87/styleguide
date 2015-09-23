@@ -1,0 +1,166 @@
+%arrow
+  border: 1px solid $arrow-border
+  border-right: none
+  border-top: none
+  content: " "
+  display: block
+  height: 8px
+  position: absolute
+  +transform(rotate(-45deg))
+  width: 8px
+  %element-with-icon.active &,
+  input[type="checkbox"]:checked > &
+    opacity: 1
+    +transform(rotate(-45deg) scale(1))
+
+%control
+  @extend %element
+  cursor: pointer
+  width: 100%
+  white-space: nowrap
+
+$element-height: 32px
+$element-line-height: $element-height / 2
+$element-padding: ($element-line-height - 2) / 2
+
+%element
+  -webkit-appearance: none
+  background: white
+  border: 1px solid $element-border
+  border-radius: 2px
+  color: $element-text
+  cursor: pointer
+  display: inline-block
+  font-size: 12px
+  font-weight: normal
+  height: $element-height
+  line-height: $element-line-height
+  padding: $element-padding
+  position: relative
+  vertical-align: top
+  &:-webkit-autofill
+    border-color: $element-border
+  &:hover
+    border-color: $element-hover-border
+    &:before
+      border-color: $element-hover-border
+  &:active,
+  &:focus
+    border-color: $element-active-border
+    outline: none
+  &.active
+    background: $element-active-background
+    border-color: $element-active-border
+    color: $element-active-text
+  &.disabled
+    background: $element-disabled-background
+    border-color: $element-disabled-border
+    color: $element-disabled-text
+
+%element-with-icon
+  @extend %element
+  height: auto
+  padding-left: $element-line-height + $element-padding * 2
+
+%element-icon
+  @extend %element
+  height: $element-line-height
+  left: $element-padding
+  padding: 0
+  position: absolute
+  transition: all $speed $easing
+  top: $element-padding
+  width: $element-line-height
+  &:hover,
+  &:active,
+  &:focus
+    border-color: $element-border
+    box-shadow: none
+  &:checked
+    background: $element-background
+    border-color: $element-border
+    box-shadow: none
+  %element-with-icon.active > &
+    background: $element-icon-active-background
+    border-color: $element-icon-active-border
+  %element-with-icon.disabled > &
+    background: $element-icon-disabled-background
+    border-color: $element-icon-disabled-border
+
+%ellipsis
+  display: block
+  height: 1.25em
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+%form-group
+  & + &
+    margin-top: 20px
+
+%header-link
+  display: block
+  height: 40px
+  line-height: 40px
+  overflow: hidden
+  padding: 12px
+  position: absolute
+  text-align: center
+  width: 40px
+  span
+    +replace(none, 40px, 40px)
+    display: block
+    position: absolute
+  &.active
+    background: $header-active-background
+    color: $header-active-text
+    .icon
+      background-position-y: -16px
+  +desktop
+    padding: 0 20px
+    position: relative
+    text-indent: 0
+    width: auto
+    span
+      display: block
+      opacity: 1
+
+%loader
+  +animation(spin-around 500ms infinite linear)
+  border: 2px solid $loader-border
+  border-right-color: transparent
+  border-top-color: transparent
+  border-radius: 290486px
+  content: " "
+  display: block
+  height: 20px
+  position: relative
+  width: 20px
+  z-index: 2
+
+%loader-overlay
+  +overlay
+  background: $loader-background
+  content: " "
+
+%log-form
+  margin: 20px auto
+  max-width: 400px
+  padding: 20px
+  .form
+    background: white
+    padding: 40px
+
+%log-route
+  .recent-viewed
+    display: none
+  .site-footer
+    display: none
+
+%section
+  color: $section-text
+  display: block
+  font-size: 10px
+  font-weight: $font-weight-normal
+  letter-spacing: 0.1em
+  text-transform: uppercase

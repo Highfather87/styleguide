@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<article class="brand-element">
+  <aside class="brand-element-info">
+    <h2 class="brand-element-title">CSS</h2>
+
+    <div class="brand-element-description">
+      <p>TROUVA uses Sass to style the website. The <code>app.sass</code> file calls several other Sass files, split into folders for convenience.</p>
+    </div>
+  </aside>
+
+  <section class="brand-element-code">
+{% highlight sass %}
+@charset "utf-8"
+
+@import bourbon/bourbon
+
+@import themes/default
+
+@import tools/reset
+@import tools/mixins
+@import tools/placeholders
+@import tools/keyframes
+
+@import ember-modal-dialog/ember-modal-structure
+@import ember-modal-dialog/ember-modal-appearance
+@import font-awesome
+
+@import styles/base
+@import styles/site
+@import styles/buttons
+@import styles/lists
+@import styles/elements
+@import styles/components
+@import styles/vendor
+@import styles/z-index
+
+@import routes/basket
+@import routes/boutiques
+@import routes/discover
+@import routes/forgot
+@import routes/landing
+@import routes/login
+@import routes/me
+@import routes/our-story
+@import routes/pages
+@import routes/product
+@import routes/reset
+@import routes/shop
+@import routes/signup
+@import routes/snap
+@import routes/team
+{% endhighlight %}
+{% highlight sass %}
+definining the charset
+
+collection of sass utilities
+
+variables for the default theme
+
+custom utilities
+
+
+
+
+vendor css
+
+
+
+generic tags styling
+site-wide styling, like header, nav, footer...
+button sizes, colors
+lists of things that are repeated in @each
+self-sufficient things
+for ember components and bigger blocks
+styling vendor things
+stacking of things
+
+custom styles for each route, if necessary
+{% endhighlight %}
+  </section>
+</article>

@@ -33,7 +33,7 @@
   height: $h
   outline: none
   overflow: hidden
-  text-indent: -$jt
+  text-indent: -290486px
   width: $w
 
 =retina($path, $name, $extension, $size)
@@ -42,6 +42,14 @@
   background-repeat: no-repeat
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
     background-image: url("#{$path}#{$name}@2x.#{$extension}")
+    background-size: $size
+
+=retina-cloudinary($one, $two, $size)
+  background-image: url(#{$one})
+  background-position: 0 0
+  background-repeat: no-repeat
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background-image: url(#{$two})
     background-size: $size
 
 =scrollbar($a, $b, $c: $scrollbar-background)
@@ -58,15 +66,25 @@
 
 // Responsiveness
 
+$portrait: 481px
 $tablet: 769px
 $desktop: 993px
+// $widescreen: 1201px
 
 =on($device)
   @media screen and (min-width: $device)
     @content
 
 =mobile()
-  @media screen and (max-width: $tablet - 1px)
+  @media screen and (max-width: $portrait - 1px)
+    @content
+
+=portrait()
+  @media screen and (min-width: $portrait)
+    @content
+
+=portrait-only()
+  @media screen and (min-width: $portrait) and (max-width: $desktop - 1px)
     @content
 
 =tablet()
@@ -79,4 +97,36 @@ $desktop: 993px
 
 =desktop()
   @media screen and (min-width: $desktop)
+    @content
+
+// Modernizr
+
+=modernizr($supports, $features...)
+  $prefix: if($supports, "", "no-")
+  $selector: if($supports, "", unquote(".no-js"))
+  @if not &
+    @error "Modernizr mixin should be called within a selector."
+  @each $feature in $features
+    @if type-of($feature) != "string"
+      @error "`#{$feature}` is not a string for `modernizr`."
+    @else
+      $new-selector: #{".has-" + $prefix + $feature}
+      $selector: if($supports, $selector + $new-selector, append($selector, $new-selector, "comma"))
+  @if function-exists("selector-nest")
+    $selector: selector-nest($selector, &)
+    @at-root #{$selector}
+      @content
+  @else
+    $placeholder: "%" + rand + random(100000000)
+    #{$placeholder} &
+      @content
+    @at-root #{$selector}
+      @extend #{$placeholder}
+
+=has($features...)
+  +modernizr(true, $features...)
+    @content
+
+=has-no($features...)
+  +modernizr(false, $features...)
     @content

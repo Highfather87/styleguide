@@ -1,0 +1,539 @@
+$header-height-mobile: 55px
+$header-height-desktop: 80px
+
+$nav-ratio: 130%
+$nav-columns: 4
+$nav-height: 40px
+
+.site-container
+  +desktop
+    min-height: 100vh
+
+// Elements
+
+.site-notification
+  background: $green
+  color: white
+  display: none
+  text-align: center
+  padding: 10px
+  strong
+    background: white
+    border-radius: $radius
+    color: $green
+    padding: 5px 10px
+  em
+    font-style: normal
+    text-decoration: underline
+  +desktop
+    display: block
+
+.site-header
+  background: $site-header-background
+  position: relative
+  text-align: center
+  +desktop
+    background: none
+    border-bottom: none
+    height: $header-height-desktop + 2px
+  .container
+    border-bottom: 2px solid $container-border
+    height: $header-height-mobile + 2px
+    +desktop
+      background: none
+      height: $header-height-desktop + 2px
+      position: relative
+  .header-logo
+    display: inline-block
+    height: 55px
+    padding: 20px
+    vertical-align: top
+    img
+      height: 15px
+      vertical-align: top
+      &.desktop
+        display: none
+    +desktop
+      height: 80px
+      left: 50%
+      margin-left: -122px
+      padding: 25px
+      position: absolute
+      top: 0
+      img
+        height: 30px
+        &.mobile
+          display: none
+        &.desktop
+          display: inline-block
+  .header-menu
+    @extend %header-link
+    left: 10px
+    top: 7px
+    +desktop
+      display: none
+  .header-search
+    @extend %header-link
+    left: 50px
+    top: 7px
+    +desktop
+      color: $nav-tab
+      height: $nav-height
+      float: left
+      font-size: $small
+      left: auto
+      letter-spacing: 0.2em
+      line-height: $nav-height
+      position: absolute
+      right: 0
+      top: $header-height-desktop + 2px
+      text-transform: uppercase
+      width: auto
+      .icon
+        float: left
+        margin: 12px 8px 0 0
+      span
+        display: inline-block
+        position: static
+        text-indent: 0
+        vertical-align: top
+        width: auto
+      &:hover
+        background: $header-search-hover-background
+      &.active,
+      &.active:hover
+        background: $header-search-active-background
+        color: $header-search-active-text
+        .icon
+          background-position-y: 0
+  .header-login,
+  .header-me
+    @extend %header-link
+    right: 50px
+    top: 7px
+    +desktop
+      display: none
+  .header-basket
+    @extend %header-link
+    right: 10px
+    top: 7px
+    .count
+      margin: -2px
+    +desktop
+      display: none
+  .header-tagline
+    color: $header-tagline-text
+    display: none
+    float: left
+    left: 20px
+    position: absolute
+    top: 31px
+    +desktop
+      display: block
+  .header-controls
+    display: none
+    float: right
+    position: absolute
+    right: 20px
+    text-align: right
+    top: 31px
+    li
+      display: inline-block
+      margin-left: 20px
+      vertical-align: top
+      a
+        color: $header-controls-link
+        display: block
+        height: 20px
+        line-height: 20px
+        .icon
+          float: left
+          margin-right: 8px
+          position: relative
+          top: 1px
+        .count
+          +animation(pop-in 1000ms linear both)
+          margin-left: 2px
+        &:hover
+          color: $header-controls-link-hover
+        &.active
+          color: $header-controls-link-active
+    +desktop
+      display: block
+
+.site-added
+  // +animation(drop-in 300ms cubic-bezier(0.3, 2, 0.7, 1) both)
+  +animation(drop-in 500ms cubic-bezier(0,1,0,1) both)
+  background: white
+  box-shadow: 0 10px 20px rgba(black, 0.5)
+  left: 0
+  padding: 20px
+  position: fixed
+  right: 0
+  text-align: left
+  top: 57px
+  +transform-origin(right top)
+  .title
+    margin-bottom: 10px
+  .button-go-to-basket
+    display: block
+    margin-top: 10px
+  +desktop
+    left: 50%
+    margin-left: 130px
+    position: absolute
+    right: auto
+    top: 80px
+    width: 360px
+
+.site-navigation
+  +overlay(fixed)
+  background: $nav-background
+  display: none
+  overflow: hidden
+  a,
+  strong
+    border-bottom: 1px solid $nav-border
+    color: $nav-link
+    display: block
+    padding: 15px 20px
+    position: relative
+    +transition(none)
+  li
+    display: inline
+  ul
+    +scrollbar(5px, 5px, $nav-scroll-background)
+    overflow: visible
+    position: relative
+  .fa
+    font-size: 21px
+    margin-top: -11px
+    position: absolute
+    right: 15px
+    top: 50%
+  .container
+    & > .navigation-menu
+      +overlay
+      & > li
+        & > .navigation-submenu
+          +overlay
+          background: $nav-background
+          display: none
+          overflow: hidden
+          overflow-y: scroll
+          z-index: 1
+          & > li
+            & > p
+              & > a,
+              & > strong
+                padding-left: 40px
+              & > a
+                color: $nav-sublink
+                &:hover
+                  color: $nav-sublink-hover
+                  text-decoration: underline
+              &.highlight
+                font-size: $small
+                letter-spacing: 0.2em
+                text-transform: uppercase
+                & > a
+                  color: $nav-link-highlight
+                  padding-left: 20px
+                  &:hover
+                    color: $nav-link-highlight-hover
+                & > strong
+                  color: $nav-strong
+                  font-weight: $font-weight-normal
+                  padding-left: 20px
+            &.navigation-back
+              & > a
+                text-indent: 20px
+                .fa
+                  left: 15px
+                  right: auto
+                  text-indent: 0
+            &.navigation-box
+              display: none
+        &.mobile-active
+          & > ul
+            display: block
+            z-index: 2
+        &.navigation-close
+          & > a
+            text-indent: 20px
+            .icon
+              left: 15px
+              margin-top: -8px
+              position: absolute
+              top: 50%
+  +desktop
+    background: none
+    display: block
+    overflow: visible
+    position: relative
+    width: auto
+    a,
+    strong
+      border-bottom: none
+      display: block
+      padding: 0
+      vertical-align: top
+    li
+      display: inline
+    ul
+      overflow: visible
+    .fa
+      display: none
+    .container
+      background: none
+      position: relative
+      & > .navigation-menu
+        height: $nav-height
+        position: relative
+        text-align: center
+        z-index: 2
+        &:hover
+          & > li
+            & > a
+              color: $nav-tab-unhover
+              &:hover
+                background: $nav-active-tab-background
+                color: $nav-active-tab-text
+            &.desktop-active
+              & > a
+                background: $nav-active-tab-background
+                color: $nav-active-tab-text
+        & > li
+          & > a
+            color: $nav-tab
+            display: inline-block
+            font-size: $small
+            height: $nav-height
+            letter-spacing: 0.2em
+            line-height: $nav-height - 2px
+            padding: 0 20px
+            text-transform: uppercase
+            .fa
+              display: none
+          & > .navigation-submenu
+            +clearfix
+            background: $nav-background
+            bottom: auto
+            box-shadow: 0 10px 20px rgba(black, 0.2)
+            display: none
+            min-height: 300px
+            overflow: hidden
+            text-align: left
+            top: $nav-height
+            & > li
+              display: block
+              float: left
+              padding: 15px 20px 20px
+              width: (100% / $nav-columns)
+              & > a
+                color: $nav-sublink
+              &.navigation-back
+                display: none
+              &.navigation-list
+                p
+                  & > a,
+                  & > strong
+                    padding: 5px 10px
+                  &.highlight
+                    & > strong
+                      padding: 5px 0
+                    & > a
+                      color: $nav-link-highlight
+                      padding: 5px 0
+                      &:hover
+                        color: $nav-link-highlight-hover
+                  & + p.highlight
+                    margin-top: 10px
+              &.navigation-box
+                display: block
+                padding: 0
+                & > a
+                  background: $nav-box-background
+                  color: $nav-box-text
+                  display: block
+                  padding-top: $nav-ratio
+                  position: relative
+                  text-transform: none
+                  img
+                    display: block
+                    left: 0
+                    position: absolute
+                    top: 0
+                  span
+                    +overlay
+                    padding-top: 100%
+                    strong
+                      color: $nav-box-strong
+                      display: block
+                      margin: 5%
+                    em
+                      display: block
+                      margin: 5%
+                      margin-top: -5%
+          &.navigation-close
+            display: none
+          &.desktop-active
+            & > a
+              z-index: 2
+            & > ul
+              display: block
+        &.desktop-active
+          position: relative
+          & > a
+            background: $nav-active-tab-background
+            color: $nav-active-tab-text
+
+.site-top
+  background: $top-background
+  display: block
+  padding: 20px
+  text-align: center
+  .fa
+    float: left
+    font-size: 21px
+    left: 20px
+    line-height: 16px
+    position: absolute
+  &:hover
+    background: $top-hover-background
+  +desktop
+    bottom: 0
+    position: fixed
+    right: 10px
+    .fa
+      margin-right: 10px
+      position: static
+
+.site-footer
+  background: $footer-background
+  color: $footer-text
+  padding: 20px 20px 110px
+  .container
+    background: none
+  a
+    color: $footer-link
+    &:hover
+      color: $footer-link-hover
+  p
+    font-size: 1.2rem
+    strong
+      color: $footer-strong
+      font-weight: $font-weight-normal
+    span
+      display: block
+      margin: 20px 0
+    em
+      display: block
+      font-size: 1rem
+      font-style: normal
+  ul
+    font-size: 1.2rem
+    margin-top: 20px
+    li
+      display: block
+      margin: 10px 0
+      &.highlight
+        min-height: 16px
+        text-transform: uppercase
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+      a
+        +transition(all $speed $easing)
+  +tablet
+    padding-bottom: 80px
+    p
+      span
+        margin: 0
+    ul
+      float: left
+      margin: 0
+      width: 50%
+    .site-footer-content
+      display: table
+      margin-top: 20px
+      position: relative
+      width: 100%
+      & > div
+        display: table-cell
+        vertical-align: top
+        width: 50%
+        &.site-footer-copyright
+          bottom: 0
+          display: block
+          left: 50%
+          position: absolute
+
+.site-overlay
+  +overlay(fixed)
+  background: rgba(black, 0.86)
+  content: " "
+  display: none
+
+.site-search
+  +overlay(fixed)
+  +scrollbar(5px, 5px)
+  background: $search-background
+  display: block
+  top: $header-height-mobile
+  .container
+    background: none
+  .form-container
+    padding: 10px
+    padding-bottom: 0
+    .input
+      border: none
+      border-radius: 0
+      font-size: 13px
+      height: 40px
+      line-height: 16px
+      padding: 8px
+  .title
+    margin: 20px
+  +desktop
+    top: $header-height-desktop + $nav-height
+
+// States
+
+html.sidemenu-open
+  overflow: hidden
+  body
+    overflow: hidden
+  .site-overlay
+    display: block
+  .site-navigation
+    display: block
+  +desktop
+    height: auto
+    overflow: visible
+    width: auto
+    .site-overlay
+      display: none
+
+html.search-open
+  height: 100%
+  overflow: hidden
+  padding-right: 10px
+  width: 100%
+  body
+    height: 100%
+    overflow: hidden
+    width: 100%
+  .site-search
+    display: block
+  .site-overlay
+    background: transparent
+    display: block
+
++desktop
+  html.submenu-open
+    .site-navigation .container:before,
+    .site-navigation .container:after
+      content: " "
+      display: block

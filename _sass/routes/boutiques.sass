@@ -1,0 +1,52 @@
+$shop-sticker-height: 68px
+
+html.route-boutiques
+  .recent-viewed
+    display: none
+
+.boutiques-filters
+  +overlay
+  +scrollbar(5px, 5px)
+  background: white
+  display: none
+  padding-bottom: $shop-sticker-height
+  position: fixed
+  +desktop
+    border-right: 1px solid $container-border
+    float: left
+    margin-right: -1px
+    overflow: visible
+    padding-bottom: 0
+    position: static
+    width: 192px
+
+.boutiques-list
+  +desktop
+    border-left: 1px solid $container-border
+    margin-left: 191px
+    overflow: auto
+
+.boutiques-sticker
+  +overlay
+  position: fixed
+  top: auto
+
+html.filters-open
+  height: 100%
+  overflow: hidden
+  width: 100%
+  .boutiques-filters
+    display: block
+  .boutiques-list
+    display: none
+
++desktop
+  .boutiques-filters,
+  .boutiques-list,
+  html.filters-open .boutiques-filters,
+  html.filters-open .boutiques-list
+    display: block
+  .boutiques-sticker
+    display: none
+  .boutiques-filters
+    background: none

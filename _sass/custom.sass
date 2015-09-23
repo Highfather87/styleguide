@@ -1,0 +1,131 @@
+$pink-shade: #CC7AB7
+$pink: #EFA8E0
+$pink-tint: #FFE6F7
+
+$coral-shade: #E57676
+$coral: #FFB3B3
+$coral-tint: #FFEAE9
+
+$turquoise-shade: #47A3B2
+$turquoise: #72D0EB
+$turquoise-tint: #DCFDFF
+
+$emerald-shade: #53A58E
+$emerald: #66CCB4
+$emerald-tint: #D5EFE1
+
+$gold-shade: #E5C645
+$gold: #FFEA85
+$gold-tint: #FFF7CF
+
+$black: #000000
+$grey-1: #6E6E6E
+$grey-2: #AAAAAA
+$grey-3: #F0F0F0
+$white: #FFFFFF
+
+$brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, coral-shade: $coral-shade, coral: $coral, coral-tint: $coral-tint, turquoise-shade: $turquoise-shade, turquoise: $turquoise, turquoise-tint: $turquoise-tint, emerald-shade: $emerald-shade, emerald: $emerald, emerald-tint: $emerald-tint, gold-shade: $gold-shade, gold: $gold, gold-tint: $gold-tint, black: $black, grey-1: $grey-1, grey-2: $grey-2, grey-3: $grey-3, white: $white)
+
+.brand-element
+  padding: 20px
+  .brand-element-info
+    .brand-element-title
+      color: $title
+      font-size: 18px
+      font-weight: $font-weight-bold
+      margin-bottom: 20px
+      text-transform: uppercase
+    .brand-element-description
+      p + p
+        margin-top: 10px
+  .brand-element-content
+    padding-top: 20px
+    text-align: center
+  +desktop
+    padding: 40px
+    +display(flex)
+    .brand-element-info
+      +flex(0 300px)
+    .brand-element-content
+      +flex(1)
+      padding: 0 0 0 40px
+      text-align: left
+    .brand-element-code
+      +display(flex)
+      +flex(1)
+      padding-left: 40px
+      .highlight
+        +flex(1)
+
+.style-colour
+  display: inline-block
+  height: 80px
+  padding: 10px 0 0 70px
+  position: relative
+  text-align: left
+  vertical-align: top
+  width: 200px
+  span
+    background: $link
+    border-radius: 290486px
+    display: block
+    height: 60px
+    left: 0
+    position: absolute
+    top: 0
+    width: 60px
+  @each $name, $colour in $brand-colours
+    &.is-#{$name}
+      span
+        background: $colour
+
+.style-colours-list
+  +tablet
+    +columns(5)
+
+.style-header
+  border-bottom: 2px solid $title
+  padding: 20px
+
+.style-icon
+  display: inline-block
+  vertical-align: top
+  img
+    height: 160px
+
+.style-logo
+  display: block
+  height: 30px
+  margin: 0 auto
+  width: 191px
+  img
+    height: 30px
+
+.style-logotype
+  margin: 0 auto
+  padding: 20px
+  width: 230px
+  img
+    height: 29px
+  &.is-white
+    background: black
+  +tablet
+    padding: 40px
+    width: 460px
+    img
+      height: 58px
+  +desktop
+    margin: 0
+
+.style-nav
+  background: $background
+  text-align: center
+  text-transform: uppercase
+  a
+    display: inline-block
+    padding: 10px 20px
+    vertical-align: top
+
+.style-typography
+  color: $title
+  font-size: 86px

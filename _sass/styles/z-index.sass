@@ -1,0 +1,71 @@
+.ember-modal-dialog
+  z-index: 9001
+
+.ember-modal-overlay
+  z-index: 9000
+
+html.search-open
+  .site-search
+    z-index: 2001
+
+  .site-overlay
+    z-index: 2000
+
+html.filters-open
+  .boutiques-sticker
+    z-index: 1003
+
+  .boutiques-filters
+    z-index: 1002
+
+  .shop-sticker
+    z-index: 1001
+
+  .shop-filters
+    z-index: 1000
+
+.site-navigation
+  z-index: 400
+
+.site-overlay
+  z-index: 300
+
+.site-search
+  z-index: 200
+
+.site-added
+  z-index: 103
+
+.boutiques-sticker
+  z-index: 102
+
+.shop-sticker
+  z-index: 101
+
+.site-header
+  z-index: 100
+
+.site-top
+  z-index: 99
+
+html.loading
+  &:after
+    z-index: 51
+
+  &:before
+    z-index: 50
+
++desktop
+  .boutiques-sticker
+    z-index: auto
+  .shop-sticker
+    z-index: auto
+  html.filters-open
+    .boutiques-filters
+      z-index: auto
+    .shop-filters
+      z-index: auto
+  .site-added
+    z-index: 402
+  .site-header
+    z-index: 401

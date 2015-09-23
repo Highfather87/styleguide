@@ -1,7 +1,7 @@
 html
   +scrollbar(5px, 10px)
-  background: white
-  color: $text
+  background: $site-background
+  color: $site-text
   font-size: $font-size-normal
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
@@ -10,6 +10,19 @@ html
   overflow: hidden
   overflow-y: scroll
   text-rendering: optimizeLegibility
+  &.loading
+    &:before
+      @extend %loader-overlay
+      +animation(fade-in $speed $speed both linear)
+      background: rgba($site-background, 0.86)
+      position: fixed
+    &:after
+      @extend %loader
+      +center(20px)
+      border-color: $html-loader
+      border-right-color: transparent
+      border-top-color: transparent
+      position: fixed
 
 body
   font-size: 1rem
@@ -17,7 +30,7 @@ body
   line-height: $line-height-normal
 
 a
-  color: $link
+  color: $site-link
   cursor: pointer
   text-decoration: none
   &:focus
@@ -54,5 +67,5 @@ textarea
   max-width: 960px
 
 +selection
-  background-color: $link
+  background-color: $site-link
   color: white

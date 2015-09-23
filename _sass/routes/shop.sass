@@ -1,0 +1,104 @@
+html.route-shop
+  .recent-viewed,
+  .site-footer
+    position: relative
+    z-index: 1
+  .recent-viewed .container
+    background: white
+
+.shop-header-boutique
+  .page-heading
+    padding: 0
+  +desktop
+    .page-heading
+      border-bottom: none
+      margin-bottom: 0
+      position: relative
+      .container
+        background: white
+        border-bottom: 1px solid $page-heading-border
+        padding: 0
+        position: relative
+
+.shop-head
+  position: relative
+  z-index: 1
+
+.shop-body
+  position: relative
+  .container
+    background: white
+    border-bottom: 1px solid $container-border
+
+.shop-filters
+  +overlay
+  +scrollbar(5px, 5px)
+  background: white
+  display: none
+  padding-bottom: $shop-sticker-height
+  position: fixed
+  +desktop
+    border-right: 1px solid $container-border
+    float: left
+    margin-right: -1px
+    overflow: visible
+    padding-bottom: 0
+    position: static
+    width: 192px
+
+.shop-list
+  .nav-controls
+    padding: 10px
+  +desktop
+    border-left: 1px solid $container-border
+    margin-left: 191px
+    overflow: auto
+    .nav-controls
+      padding: 20px
+
+.shop-sticker
+  +overlay
+  position: fixed
+  top: auto
+
+.button-show-filters
+  display: block
+
+.button-cancel-filters,
+.button-apply-filters
+  display: none
+
+html.filters-open
+  height: 100%
+  overflow: hidden
+  width: 100%
+  .shop-filters
+    display: block
+  .shop-list
+    display: none
+  .button-show-filters
+    display: none
+  .button-cancel-filters,
+  .button-apply-filters
+    display: block
+
++desktop
+  html.filters-open
+    height: auto
+    overflow: hidden
+    overflow-y: scroll
+    width: auto
+  .shop-cover,
+  .shop-filters,
+  .shop-list,
+  html.filters-open .shop-filters,
+  html.filters-open .shop-list
+    display: block
+  .shop-sticker
+    display: none
+  .shop-filters
+    background: none
+  .shop-header-boutique + .shop-body .shop-filters
+    padding-top: 0
+    .box-filter:first-child
+      border-top: none

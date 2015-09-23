@@ -1,0 +1,734 @@
+%item
+  display: block
+  overflow: hidden
+  position: relative
+
+$article-height: 120px
+$article-padding: 20px
+
+.list-articles
+  .list-article
+    @extend %item
+    background: white
+    border-top: 1px solid $article-border
+    min-height: $article-height + 1px
+    padding: $article-padding
+    padding-left: $article-height + $article-padding
+    .background-image
+      height: $article-height
+      left: 0
+      padding-top: 0
+      position: absolute
+      top: 0
+      width: $article-height
+    .name
+      display: block
+    .product-quantity
+      margin: 10px 0
+    .remove
+      margin-top: 10px
+    +portrait
+      $article-height: 150px
+      font-size: 1.2rem
+      min-height: $article-height
+      padding-left: $article-height + $article-padding
+      padding-right: $article-height
+      .background-image
+        height: $article-height
+        width: $article-height
+      .product-price
+        right: 10px
+        position: absolute
+        text-align: right
+        top: 20px
+    &.loading
+      &:before
+        @extend %loader-overlay
+        +animation(fade-in $speed $speed both linear)
+        z-index: 1
+      &:after
+        @extend %loader
+        +center(20px)
+        border-color: $html-loader
+        border-right-color: transparent
+        border-top-color: transparent
+        z-index: 2
+    +desktop
+      border: 1px solid $article-border
+      margin-bottom: 20px
+
+.list-boutiques
+  +clearfix
+  .list-boutique
+    @extend %item
+    & > a
+      display: block
+      position: relative
+      .background-image
+        background-size: cover
+        padding-top: 66.6666%
+    p
+      background: white
+      padding: 20px 20px 40px
+      .button-shop-this-boutique
+        display: none
+        float: right
+        margin: 0 0 10px 10px
+      .name
+        font-size: 1.2em
+      .box-tags
+        margin-top: 5px
+    .boutique-follow
+      float: left
+      position: absolute
+      right: 10px
+      top: 10px
+      z-index: 1
+  +portrait
+    .list-boutique
+      float: left
+      width: 50%
+      &:nth-child(2n+1)
+        clear: left
+  +desktop
+    padding: 0 10px
+    .list-boutique
+      margin: 20px 10px 0
+      width: 354px
+      p
+        padding: 10px 0 20px
+
+.list-categories
+  +clearfix
+  .list-category
+    @extend %item
+    float: left
+    padding-top: 66.6666%
+    width: 50%
+    img
+      +overlay
+      bottom: auto
+      display: none
+      width: 100%
+      &:first-child
+        display: block
+    p
+      background: white
+      padding: 20px
+      strong
+        display: block
+  +portrait
+    .list-category
+      img
+        display: block
+        &:first-child
+          display: none
+  +tablet
+    .list-category
+      float: left
+      padding-top: 33.3333%
+      width: 25%
+
+.list-members
+  +clearfix
+  margin: 0 auto
+  width: 300px
+  .list-member
+    display: block
+    padding-bottom: 40px
+    text-align: center
+    width: 300px
+    figure
+      background: $team-color
+      overflow: hidden
+      padding: 220px 0 20px
+      position: relative
+      width: 300px
+      img
+        +overlay
+        bottom: auto
+        max-height: none
+        +transition(transform $speed * 4 $easing)
+      figcaption
+        position: relative
+        z-index: 1
+        & > a
+          border-radius: 50%
+          color: white
+          display: inline-block
+          height: 40px
+          position: relative
+          width: 40px
+          &:before
+            +overlay
+            background: white
+            border-radius: 50%
+            content: ""
+            display: block
+            +transform(scale(0))
+            +transition(all $speed $easing)
+            z-index: 1
+          .fa
+            font-size: 21px
+            line-height: 40px
+            position: relative
+            z-index: 2
+          &:hover
+            color: $team-color
+            &:before
+              +transform(scale(1.14))
+        span
+          color: rgba(white, 0.5)
+          display: block
+          font-size: 11px
+          margin-top: 10px
+          position: relative
+          a
+            color: white
+            font-size: 13px
+            &:hover
+              text-decoration: underline
+    p
+      font-size: 13px
+      margin-top: 20px
+      strong
+        color: $team-color
+        display: block
+        font-weight: 400
+        text-transform: uppercase
+  +tablet
+    width: 640px
+    .list-member
+      float: left
+      margin: 0 10px
+      &.advisor
+        width: 140px
+  +desktop
+    width: 960px
+    .list-member
+      figure
+        background: none
+        height: 200px
+        padding: 85px 0 0
+        figcaption
+          opacity: 0
+          +transition(opacity $speed $easing)
+        &:after
+          +overlay
+          background: rgba($team-color, 0.86)
+          content: ""
+          opacity: 0
+          +transition(opacity $speed $easing)
+        &:hover
+          img
+            +transform(scale(1.14))
+          figcaption
+            opacity: 1
+            span
+              margin-top: 20px
+          &:after
+            opacity: 1
+      &.advisor
+        width: 220px
+
+.list-photos
+  text-align: center
+  .list-photo
+    cursor: pointer
+    display: inline-block
+    height: 60px
+    line-height: 54px
+    margin-top: 3px
+    text-align: center
+    vertical-align: top
+    img
+      max-height: 100%
+      vertical-align: middle
+  +desktop
+    +clearfix
+    float: left
+    width: 60px
+    .list-photo
+      float: left
+      height: auto
+      line-height: normal
+      margin: 0 0 10px
+      width: 60px
+
+.list-products
+  +clearfix
+  padding: 0 5px
+  .list-product
+    @extend %item
+    float: left
+    max-width: 50%
+    min-width: 50%
+    padding: 0 5px 20px
+    a
+      display: block
+      position: relative
+      .background-image
+        margin-bottom: 10px
+        padding-top: 100%
+        &:nth-child(2)
+          display: none
+      .name
+        letter-spacing: 0
+        max-height: 2.5em
+      em
+        display: block
+        font-style: normal
+      &:visited
+        .background-image
+          outline-color: $lighter
+        .name
+          color: $visited
+        .product-price
+          color: $visited
+          strong
+            color: $visited
+    .product-like
+      display: block
+      height: 32px
+      position: absolute
+      right: 20px
+      top: 10px
+      width: 32px
+      z-index: 1
+    &:hover
+      .product-like
+        .heart
+          opacity: 1
+    &:nth-child(2n+1)
+      clear: left
+  +portrait
+    .list-product
+      max-width: 33.3333%
+      min-width: 33.3333%
+      &:nth-child(2n+1)
+        clear: none
+      &:nth-child(3n+1)
+        clear: left
+      a
+        .background-image
+          &:nth-child(2)
+            display: block
+            left: 0
+            opacity: 0
+            position: absolute
+            top: 0
+            +transition(opacity $speed $easing)
+      &:hover
+        a
+          .background-image:nth-child(2)
+            opacity: 1
+  +desktop
+    padding: 0 10px
+    .list-product
+      padding: 0 10px 20px
+
+.list-recents
+  @extend .list-products
+  .list-recent
+    @extend .list-product
+    float: left
+    max-width: 50%
+    min-width: 50%
+    &:nth-child(2n+1)
+      clear: left
+    +portrait
+      max-width: 20%
+      min-width: 20%
+      &:nth-child(2n+1),
+      &:nth-child(3n+1),
+      &:nth-child(4n+1)
+        clear: none
+      &:nth-child(5n+1)
+        clear: left
+
+.list-similars
+  @extend .list-products
+  .list-similar
+    @extend .list-product
+    float: left
+    max-width: 50%
+    min-width: 50%
+    &:nth-child(2n+1)
+      clear: left
+    +portrait
+      max-width: 20%
+      min-width: 20%
+      &:nth-child(2n+1),
+      &:nth-child(3n+1),
+      &:nth-child(4n+1)
+        clear: none
+      &:nth-child(5n+1)
+        clear: left
+
+.list-rows
+  .list-row
+    +clearfix
+    position: relative
+    .list-row-entry
+      @extend %item
+      .list-row-entry-image
+        +overlay
+        bottom: auto
+        opacity: 1
+        +transition(opacity 500ms)
+        width: 100%
+        z-index: 2
+        &.mobile
+          display: block
+        &.desktop
+          display: none
+        &.loading
+          opacity: 0
+      .list-row-entry-description
+        color: $entry-description
+        padding: 20px
+        position: relative
+        z-index: 4
+      .list-row-entry-content
+        background: white
+        display: block
+        padding: 20px
+        position: relative
+        +transition(all $speed $easing)
+        z-index: 6
+        .list-row-entry-surtitle
+          color: $entry-surtitle
+          display: block
+        .list-row-entry-title
+          color: $entry-title
+          display: block
+          font-size: 18px
+          font-weight: $font-weight-bold
+          text-transform: uppercase
+        .list-row-entry-action
+          @extend %button
+          @extend %button-primary
+          margin-top: 10px
+        .list-row-entry-tags
+          color: $entry-tags
+          display: block
+          margin-top: 10px
+          vertical-align: top
+          a:hover
+            text-decoration: underline
+        &.is-empty
+          display: none
+      .list-row-entry-tile
+        @each $name, $color in $background-colors
+          &.list-row-entry-background-color-#{$name}
+            background: $color
+        @each $name, $color in $text-colors
+          &.list-row-entry-text-color-#{$name}
+            color: $color
+        span
+          display: table
+          font-size: 18px
+          font-weight: $font-weight-bold
+          text-align: center
+          text-transform: uppercase
+          width: 100%
+          strong
+            display: table-cell
+            padding: 40px 80px
+            vertical-align: middle
+      &.list-row-entry-box
+        padding-top: 50%
+        // &:before
+        //   @extend %loader
+        //   +center(20px)
+        //   border-color: $html-loader
+        //   border-right-color: transparent
+        //   border-top-color: transparent
+        //   z-index: 1
+        &:after
+          +overlay
+          background: rgba(black, 0.2)
+          content: ""
+          opacity: 0
+          +transition(opacity $speed $easing)
+          z-index: 3
+        &:hover
+          &:after
+            opacity: 1
+      &.list-row-entry-list
+        .list-row-entry-list
+          padding: 20px
+          li
+            a
+              &:hover
+                text-decoration: underline
+      &.list-row-entry-boutique
+        padding-top: 0
+        .list-row-entry-image
+          display: none
+        .list-row-entry-content
+          .fa
+            display: none
+          &:hover
+            background: $background
+        .list-products
+          padding: 0
+          z-index: 5
+          .list-product
+            padding: 0
+            a
+              .background-image
+                margin-bottom: 0
+              .name
+                max-height: none
+                padding: 10px
+              &:visited
+                .name
+                  color: $name-text
+      &.list-row-entry-tile
+        &:after
+          +overlay
+          background: rgba(black, 0.2)
+          content: ""
+          opacity: 0
+          +transition(opacity $speed $easing)
+          z-index: 3
+        &:hover
+          &:after
+            opacity: 1
+  +tablet
+    .list-row
+      .list-row-entry
+        left: 0
+        position: absolute
+        top: 0
+        .list-row-entry-image
+          &.mobile
+            display: none
+          &.desktop
+            display: block
+        .list-row-entry-description
+          +linear-gradient(rgba(black, 0), rgba(black, 0.5))
+          bottom: 0
+          color: white
+          font-size: 17px
+          left: 0
+          position: absolute
+          width: 67%
+        .list-row-entry-content
+          @each $name, $color in $text-colors
+            &.list-row-entry-text-color-#{$name}
+              .list-row-entry-surtitle
+                color: $color
+          &.list-row-entry-text-color-white
+            .list-row-entry-title
+              color: white
+        .list-row-entry-tile
+          +overlay
+          span
+            +overlay
+            display: table
+            height: 100%
+        &.list-row-entry-box
+          .list-row-entry-content
+            +overlay
+            background: none
+        &.list-row-entry-list
+          .list-row-entry-list
+            +overlay
+        &.list-row-entry-boutique
+          .list-row-entry-image
+            +overlay
+            bottom: auto
+            display: block
+            height: auto
+            max-height: none
+            max-width: none
+            min-height: 100%
+            min-width: 67%
+            right: auto
+            width: auto
+          .list-row-entry-content
+            +overlay
+            background: white
+            bottom: auto
+            right: auto
+            top: 20px
+            width: 240px
+            .fa
+              display: block
+              font-size: 28px
+              margin-top: -14px
+              opacity: 0
+              position: absolute
+              right: 20px
+              text-align: center
+              +transform(translateX(-10px))
+              +transition(all $speed $easing)
+              top: 50%
+              width: 28px
+            &:hover
+              width: 260px
+              .fa
+                opacity: 1
+                +transform(translateX(0))
+          .list-products
+            +overlay
+            left: auto
+            width: 33.3333%
+            .list-product
+              max-width: 50%
+              min-width: 50%
+              &:nth-child(3n+1)
+                clear: none
+              .name
+                +overlay
+                background: white
+                max-height: none
+                opacity: 0
+                padding: 10px
+                text-overflow: initial
+                top: auto
+                +transform(translateY(10px))
+                +transition(all $speed $easing)
+                white-space: normal
+              &:hover
+                .name
+                  opacity: 1
+                  +transform(translateY(0))
+      &.list-row-50-1
+        padding-top: 50%
+        .list-row-entry
+          padding-top: 50%
+          width: 100%
+          &.list-row-entry-boutique
+            .list-row-entry-description,
+            .list-products
+              width: 50%
+      &.list-row-50-2
+        padding-top: 50%
+        .list-row-entry
+          padding-top: 50%
+          width: 50%
+          &.list-row-entry-2
+            left: 50%
+          &.list-row-entry-boutique
+            .list-products
+              .list-product
+                max-width: 100%
+                min-width: 100%
+      &.list-row-33-1
+        padding-top: 33.3333%
+        .list-row-entry
+          padding-top: 33.3333%
+          width: 100%
+      &.list-row-33-2
+        padding-top: 33.3333%
+        .list-row-entry
+          padding-top: 33.3333%
+          width: 50%
+          &.list-row-entry-2
+            left: auto
+            right: 0
+      &.list-row-33-1-2
+        padding-top: 33.3333%
+        .list-row-entry
+          padding-top: 33.3333%
+          width: 33.3333%
+          &.list-row-entry-2
+            left: auto
+            right: 0
+            width: 66.6666%
+          &.list-row-entry-boutique
+            .list-row-entry-description
+              width: 100%
+            .list-products
+              display: none
+      &.list-row-33-2-1
+        padding-top: 33.3333%
+        .list-row-entry
+          padding-top: 33.3333%
+          width: 33.3333%
+          &.list-row-entry-1
+            width: 66.6666%
+          &.list-row-entry-2
+            left: auto
+            right: 0
+          &.list-row-entry-boutique
+            .list-row-entry-description
+              width: 100%
+            .list-products
+              display: none
+      &.list-row-33-3
+        padding-top: 33.3333%
+        .list-row-entry
+          padding-top: 33.3333%
+          left: 33.3333%
+          width: 33.3333%
+          &.list-row-entry-1
+            left: 0
+          &.list-row-entry-3
+            left: 66.6666%
+            width: 33.3333%
+          &.list-row-entry-boutique
+            .list-row-entry-description
+              width: 100%
+            .list-products
+              display: none
+      &.list-row-25-1
+        padding-top: 25%
+        .list-row-entry
+          padding-top: 25%
+          width: 100%
+          &.list-row-entry-boutique
+            .list-row-entry-description,
+            .list-products
+              width: 50%
+      &.list-row-25-2
+        padding-top: 25%
+        .list-row-entry
+          padding-top: 25%
+          width: 50%
+          &.list-row-entry-2
+            left: 50%
+          &.list-row-entry-box
+            .list-row-entry-image
+              height: 100%
+              right: auto
+              width: auto
+            .list-row-entry-content
+              background: white
+              left: 50%
+          &.list-row-entry-boutique
+            .list-row-entry-description
+              width: 100%
+            .list-products
+              display: none
+      &.list-row-25-3
+        padding-top: 25%
+        .list-row-entry
+          padding-top: 25%
+          width: 33.3333%
+          &.list-row-entry-2
+            left: 33.3333%
+          &.list-row-entry-3
+            left: 66.6666%
+          &.list-row-entry-boutique
+            .list-row-entry-description,
+            .list-products
+              display: none
+      &.list-row-25-4
+        padding-top: 25%
+        .list-row-entry
+          padding-top: 25%
+          width: 25%
+          &.list-row-entry-2
+            left: 25%
+          &.list-row-entry-3
+            left: 50%
+          &.list-row-entry-4
+            left: 75%
+          &.list-row-entry-boutique
+            .list-row-entry-description,
+            .list-products
+              display: none

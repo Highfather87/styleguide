@@ -1,15 +1,16 @@
 //
-//  HTML5 Reset :: style.css
-//  ----------------------------------------------------------
-//  We have learned much from/been inspired by/taken code where offered from:
+//	HTML5 Reset :: style.css
+//	----------------------------------------------------------
+//	We have learned much from/been inspired by/taken code where offered from:
 //
-//  Eric Meyer          :: http://meyerweb.com
-//  HTML5 Doctor        :: http://html5doctor.com
-//  and the HTML5 Boilerplate :: http://html5boilerplate.com
+//	Eric Meyer					:: http://meyerweb.com
+//	HTML5 Doctor				:: http://html5doctor.com
+//	and the HTML5 Boilerplate	:: http://html5boilerplate.com
 //
 //-------------------------------------------------------------------------------
 
 // Let's default this puppy out
+//-------------------------------------------------------------------------------
 
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary
   margin: 0
@@ -43,11 +44,11 @@ embed
 
 //
 //   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
-//   In fact, it *will* cause problems with Google Maps' controls at small size.
-//  If this is the case for you, try uncommenting the following:
+//	 In fact, it *will* cause problems with Google Maps' controls at small size.
+//	If this is the case for you, try uncommenting the following:
 //
 //#map img {
-//    max-width: none;
+//		max-width: none;
 //}
 
 // force a vertical scrollbar to prevent a jumpy page
@@ -55,7 +56,7 @@ html
   overflow-y: scroll
 
 // we use a lot of ULs that aren't bulleted.
-//  don't forget to restore the bullets within content.
+//	don't forget to restore the bullets within content.
 ul
   list-style: none
 
@@ -189,14 +190,15 @@ input[type=button]
 //.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 
 // let's clear some floats
-.clearfix:before, .clearfix:after
-  content: "\0020"
-  display: block
-  height: 0
-  overflow: hidden
-
-.clearfix:after
-  clear: both
-
 .clearfix
   zoom: 1
+
+  &:before,
+  &:after
+    content: "\0020"
+    display: block
+    height: 0
+    overflow: hidden
+
+  &:after
+    clear: both
