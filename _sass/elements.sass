@@ -1,0 +1,63 @@
+.colour
+  display: inline-block
+  height: 80px
+  padding: 10px 0 0 70px
+  position: relative
+  text-align: left
+  vertical-align: top
+  width: 200px
+  span
+    background: $link
+    border-radius: $jt
+    display: block
+    height: 60px
+    left: 0
+    position: absolute
+    top: 0
+    width: 60px
+  @each $name, $colour in $brand-colours
+    &.is-#{$name}
+      span
+        background: $colour
+
+.description
+  p + p
+    margin-top: 10px
+
+.icon
+  display: inline-block
+  vertical-align: top
+  img
+    height: 160px
+
+.logo
+  display: block
+  height: 30px
+  margin: 0 auto
+  width: 191px
+  img
+    height: 30px
+
+.logotype
+  margin: 0 auto
+  padding: 20px
+  width: 230px
+  img
+    height: 29px
+  &.is-white
+    background: black
+  +tablet
+    padding: 40px
+    width: 460px
+    img
+      height: 58px
+
+.title
+  color: $title
+  font-size: 18px
+  font-weight: $font-weight-bold
+  text-transform: uppercase
+
+.typography
+  color: $title
+  font-size: 86px

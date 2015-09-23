@@ -1,0 +1,76 @@
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+# Brand colours
+colours:
+  - slug: pink-shade
+    name: Pink shade
+    hex: CC7AB7
+  - slug: pink
+    name: Pink
+    hex: EFA8E0
+  - slug: pink-tint
+    name: Pink tint
+    hex: FFE6F7
+  - slug: coral-shade
+    name: Coral shade
+    hex: E57676
+  - slug: coral
+    name: Coral
+    hex: FFB3B3
+  - slug: coral-tint
+    name: Coral tint
+    hex: FFEAE9
+  - slug: turquoise-shade
+    name: Turquoise shade
+    hex: 47A3B2
+  - slug: turquoise
+    name: Turquoise
+    hex: 72D0EB
+  - slug: turquoise-tint
+    name: Turquoise tint
+    hex: DCFDFF
+  - slug: emerald-shade
+    name: Emerald shade
+    hex: 53A58E
+  - slug: emerald
+    name: Emerald
+    hex: 66CCB4
+  - slug: emerald-tint
+    name: Emerald tint
+    hex: D5EFE1
+  - slug: gold-shade
+    name: Gold shade
+    hex: E5C645
+  - slug: gold
+    name: Gold
+    hex: FFEA85
+  - slug: gold-tint
+    name: Gold tint
+    hex: FFF7CF
+shades:
+  - slug: black
+    name: Black
+    hex: 000000
+  - slug: grey-1
+    name: Grey shade 1
+    hex: 6E6E6E
+  - slug: grey-2
+    name: Grey shade 2
+    hex: AAAAAA
+  - slug: grey-3
+    name: Grey shade 3
+    hex: F0F0F0
+  - slug: white
+    name: White
+    hex: FFFFFF

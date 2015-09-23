@@ -1,0 +1,110 @@
+// Colors
+
+$pink-shade: #CC7AB7
+$pink: #EFA8E0
+$pink-tint: #FFE6F7
+
+$coral-shade: #E57676
+$coral: #FFB3B3
+$coral-tint: #FFEAE9
+
+$turquoise-shade: #47A3B2
+$turquoise: #72D0EB
+$turquoise-tint: #DCFDFF
+
+$emerald-shade: #53A58E
+$emerald: #66CCB4
+$emerald-tint: #D5EFE1
+
+$gold-shade: #E5C645
+$gold: #FFEA85
+$gold-tint: #FFF7CF
+
+$black: #000000
+$grey-1: #6E6E6E
+$grey-2: #AAAAAA
+$grey-3: #F0F0F0
+$white: #FFFFFF
+
+// $brand-colours: (pink-shade: Pink shade, pink: Pink, pink-tint: Pink tint, coral-shade: Coral shade, coral: Coral, coral-tint: Coral tint, turquoise-shade: Turquoise shade, turquoise: Turquoise, turquoise-tint: Turquoise tint, emerald-shade: Emerald shade, emerald: Emerald, emerald-tint: Emerald tint, gold-shade: Gold shade, gold: Gold, gold-tint: Gold tint)
+// $brand-colours: pink-shade pink pink-tint coral-shade coral coral-tint turquoise-shade turquoise turquoise-tint emerald-shade emerald emerald-tint gold-shade gold gold-tint
+$brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, coral-shade: $coral-shade, coral: $coral, coral-tint: $coral-tint, turquoise-shade: $turquoise-shade, turquoise: $turquoise, turquoise-tint: $turquoise-tint, emerald-shade: $emerald-shade, emerald: $emerald, emerald-tint: $emerald-tint, gold-shade: $gold-shade, gold: $gold, gold-tint: $gold-tint, black: $black, grey-1: $grey-1, grey-2: $grey-2, grey-3: $grey-3, white: $white)
+
+$primary: $coral-shade
+
+$facebook: #3b5998
+$github: #333333
+$google-plus: #dd4b39
+$instagram: #3f729b
+$linkedin: #0077b5
+$pinterest: #cc2127
+$twitter: #55acee
+
+$border: $grey-3
+$text: $grey-2
+$title: $black
+$link: $primary
+
+// Mixins
+
+$scrollbar-background: $border
+$scrollbar-thumb: $link
+
+// Font
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-light.eot")
+  src: url("/fonts/lineto-brown-light.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-light.woff") format("woff"), url("/fonts/lineto-brown-light.ttf") format("truetype"), url("/fonts/lineto-brown-light.svg#lineto-brown-light") format("svg")
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-regular.eot")
+  src: url("/fonts/lineto-brown-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-regular.woff") format("woff"), url("/fonts/lineto-brown-regular.ttf") format("truetype"), url("/fonts/lineto-brown-regular.svg#lineto-brown-regular") format("svg")
+  font-weight: 400
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-italic.eot")
+  src: url("/fonts/lineto-brown-italic.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-italic.woff") format("woff"), url("/fonts/lineto-brown-italic.ttf") format("truetype"), url("/fonts/lineto-brown-italic.svg#lineto-brown-italic") format("svg")
+  font-weight: 400
+  font-style: italic
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-bold.eot")
+  src: url("/fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-bold.woff") format("woff"), url("/fonts/lineto-brown-bold.ttf") format("truetype"), url("/fonts/lineto-brown-bold.svg#lineto-brown-bold") format("svg")
+  font-weight: 700
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-bolditalic.eot")
+  src: url("/fonts/lineto-brown-bolditalic.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-bolditalic.woff") format("woff"), url("/fonts/lineto-brown-bolditalic.ttf") format("truetype"), url("/fonts/lineto-brown-bolditalic.svg#lineto-brown-bolditalic") format("svg")
+  font-weight: 700
+  font-style: italic
+
+$font-family-sans-serif: "Brown", "ff-tisa-sans-web-pro", "TisaSansPro", "Myriad Pro", "Lucida Grande", Arial, sans-serif
+$font-family-serif: "Brown", "jubilat", Georgia, serif
+
+$font-family-primary: $font-family-sans-serif
+$font-family-secondary: $font-family-serif
+
+$font-size-normal: 13px
+
+$font-weight-normal: 400
+$font-weight-bold: 700
+
+$line-height-normal: 1.25
+$line-height-headings: 1.125
+
+// Miscellaneous
+
+$easing: ease-out
+$jt: 290486px
+$radius: 3px
+$small: 0.875em
+$speed: 100ms

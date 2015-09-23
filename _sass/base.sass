@@ -1,0 +1,58 @@
+html
+  +scrollbar(5px, 10px)
+  background: white
+  color: $text
+  font-size: $font-size-normal
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  letter-spacing: 0.05em
+  min-width: 315px
+  overflow: hidden
+  overflow-y: scroll
+  text-rendering: optimizeLegibility
+
+body
+  font-size: 1rem
+  font-weight: $font-weight-normal
+  line-height: $line-height-normal
+
+a
+  color: $link
+  cursor: pointer
+  text-decoration: none
+  &:focus
+    outline: none
+
+address
+  font-style: normal
+
+input[type="checkbox"]
+  vertical-align: baseline
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+section
+  display: block
+
+body,
+button,
+input,
+select,
+textarea
+  font-family: $font-family-primary
+
+.container
+  +clearfix
+  background: white
+  margin: 0 auto
+  max-width: 960px
+
++selection
+  background-color: $link
+  color: white

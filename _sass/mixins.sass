@@ -1,0 +1,82 @@
+=center($size)
+  left: 50%
+  margin-left: -($size / 2)
+  margin-top: -($size / 2)
+  position: absolute
+  top: 50%
+
+=clearfix
+  &:after
+    clear: both
+    content: " "
+    display: table
+
+=fa($size)
+  font-size: $size
+  height: $size
+  line-height: $size
+  text-align: center
+  width: $size
+
+=overlay($p: absolute)
+  bottom: 0
+  display: block
+  left: 0
+  position: $p
+  right: 0
+  top: 0
+
+=replace($bg, $h, $w)
+  background: $bg center center no-repeat
+  background-size: $h $w
+  display: block
+  height: $h
+  outline: none
+  overflow: hidden
+  text-indent: -$jt
+  width: $w
+
+=retina($path, $name, $extension, $size)
+  background-image: url("#{$path}#{$name}.#{$extension}")
+  background-position: 0 0
+  background-repeat: no-repeat
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background-image: url("#{$path}#{$name}@2x.#{$extension}")
+    background-size: $size
+
+=scrollbar($a, $b, $c: $scrollbar-background)
+  overflow: hidden
+  -webkit-overflow-scrolling: touch
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    background: $c
+    width: $a
+    +desktop
+      width: $b
+  &::-webkit-scrollbar-thumb
+    background: $scrollbar-thumb
+
+// Responsiveness
+
+$tablet: 769px
+$desktop: 993px
+
+=on($device)
+  @media screen and (min-width: $device)
+    @content
+
+=mobile()
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+=tablet()
+  @media screen and (min-width: $tablet)
+    @content
+
+=tablet-only()
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+
+=desktop()
+  @media screen and (min-width: $desktop)
+    @content
