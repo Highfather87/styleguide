@@ -49,8 +49,13 @@ $brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, co
           left: 0
           position: absolute
           top: 1px
-      a:hover
-        text-decoration: underline
+      a
+        &:hover
+          text-decoration: underline
+        &.is-active
+          background: $yellow
+          box-shadow: 0 0 0 3px $yellow
+          color: $title
       ul
         padding: 5px 0 0 20px
   .brand-element-description
