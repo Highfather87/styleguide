@@ -54,15 +54,32 @@ $brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, co
       ul
         padding: 5px 0 0 20px
   .brand-element-description
-    code
+    & > code
       background: $background
       color: $blue-dark
       padding: 2px 5px 3px
     em,
     strong
       color: $title
+    ul
+      list-style: disc outside
+      margin: 10px 20px
     p + p
       margin-top: 10px
+    .highlight
+      margin: 10px 0
+  .brand-element-code
+    .highlight
+      span:hover
+        &:after
+          background: rgba(white, 0.29)
+          content: ""
+          display: block
+          height: 20px
+          left: 0
+          margin-top: -19px
+          position: absolute
+          right: 0
   .brand-element-content
     padding-top: 20px
     .brand-element-description

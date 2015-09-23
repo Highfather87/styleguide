@@ -54,9 +54,12 @@ $desktop: 993px
 
 
 
-
-
 =mobile()
+=portrait()
+=portrait-only()
+=tablet()
+=tablet-only()
+=desktop()
 {% endhighlight %}
 
 {% highlight sass %}
@@ -89,6 +92,13 @@ screen breakpoints in width
 for media query breakpoints
 Example:
 +on($tablet) will only apply on tablet and bigger
+
+shortcut for mobile-only
+shortcut for portrait and above
+shortcut for portrait-only
+shortcut for tablet and above
+shortcut for tablet-only
+shortcut for desktop and above
 {% endhighlight %}
     </div>
   </section>
