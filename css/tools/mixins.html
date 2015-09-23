@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<article class="brand-element">
+  <aside class="brand-element-info">
+    <h2 class="brand-element-title">CSS</h2>
+
+    {% include files.html %}
+  </aside>
+
+  <section class="brand-element-content">
+    <hgroup class="brand-element-heading">
+      <p class="brand-element-title">mixins.sass</p>
+    </hgroup>
+
+    <div class="brand-element-description">
+      <p>Sass mixins are like <strong>functions</strong>. They can have <strong>parameters</strong> but that's optional.</p>
+      <p>You <em>define</em> a mixin with the <strong>equal</strong> sign <code>=mixin(parameter)</code>.</p>
+      <p>You <em>call</em> a mixin with the <strong>plus</strong> sign <code>+mixin(value)</code>.</p>
+      <p>The result is basically <strong>inserted</strong> wherever you call the mixin, and as many times as you call it. So if you call the mixin 5 times throughout your CSS, the same code will be repeated 5 times.<br>Although it's not very <abbr title="Don't Repeat Yourself">DRY</abbr>, it's straightforward and prevents some surprises.</p>
+      <p><a href="http://bourbon.io/docs/">Bourbon</a> provides lots of mixins already. This <code>mixins.sass</code> file provides additional ones.</p>
+    </div>
+
+    <div class="brand-element-code">
+{% highlight sass %}
+=center($size)
+
+
+=clearfix
+
+
+=fa($size)
+
+
+=overlay($p: absolute)
+
+=replace($bg, $h, $w)
+
+
+=retina($path, $name, $extension, $size)
+
+=retina-cloudinary($one, $two, $size)
+
+=scrollbar($a, $b, $c: $scrollbar-background)
+
+// Responsiveness
+
+$portrait: 481px
+$tablet: 769px
+$desktop: 993px
+
+=on($device)
+
+
+
+
+
+=mobile()
+{% endhighlight %}
+
+{% highlight sass %}
+given some dimensions, this mixin centers
+the element horizontally and vertically
+
+apply on a container
+clears all the floats inside
+
+for FontAwesome
+only use multiples of 7
+
+makes an element cover completely its parent
+
+removes the text of an element
+and puts a background-image instead
+
+shows Retina image only on high-res screens
+
+shows Cloudinary Retina image only on high-res screens
+
+adds a colored scrollbar on an element
+
+// Responsiveness
+
+screen breakpoints in width
+
+
+
+for media query breakpoints
+Example:
++on($tablet) will only apply on tablet and bigger
+{% endhighlight %}
+    </div>
+  </section>
+</article>

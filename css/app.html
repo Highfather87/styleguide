@@ -7,13 +7,18 @@ layout: default
     <h2 class="brand-element-title">CSS</h2>
 
     {% include files.html %}
-
-    <div class="brand-element-description">
-      <p>TROUVA uses Sass to style the website. The <code>app.sass</code> file calls several other Sass files, split into folders for convenience.</p>
-    </div>
   </aside>
 
-  <section class="brand-element-code">
+  <section class="brand-element-content">
+    <hgroup class="brand-element-heading">
+      <p class="brand-element-title">app.sass</p>
+    </hgroup>
+
+    <div class="brand-element-description">
+      <p>The <code>app.sass</code> file calls several other Sass files, split into folders for convenience.</p>
+    </div>
+
+    <div class="brand-element-code">
 {% highlight sass %}
 @charset "utf-8"
 
@@ -82,5 +87,6 @@ stacking of things
 
 custom styles for each route, if necessary
 {% endhighlight %}
+    </div>
   </section>
 </article>

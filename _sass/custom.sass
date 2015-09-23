@@ -28,19 +28,45 @@ $brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, co
 
 .brand-element
   padding: 20px
-  .brand-element-info
-    .brand-element-title
+  .brand-element-title
+    color: $title
+    font-size: 18px
+    font-weight: $font-weight-bold
+    margin-bottom: 20px
+    text-transform: uppercase
+  .brand-element-files
+    margin-bottom: 20px
+    li
+      margin-bottom: 5px
+      a,
+      span
+        display: inline-block
+        padding-left: 20px
+        position: relative
+        vertical-align: top
+        .fa
+          +fa(14px)
+          left: 0
+          position: absolute
+          top: 1px
+      a:hover
+        text-decoration: underline
+      ul
+        padding: 5px 0 0 20px
+  .brand-element-description
+    code
+      background: $background
+      color: $blue-dark
+      padding: 2px 5px 3px
+    em,
+    strong
       color: $title
-      font-size: 18px
-      font-weight: $font-weight-bold
-      margin-bottom: 20px
-      text-transform: uppercase
-    .brand-element-description
-      p + p
-        margin-top: 10px
+    p + p
+      margin-top: 10px
   .brand-element-content
     padding-top: 20px
-    text-align: center
+    .brand-element-description
+      margin-bottom: 20px
   +desktop
     padding: 40px
     +display(flex)
@@ -49,11 +75,8 @@ $brand-colours: (pink-shade: $pink-shade, pink: $pink, pink-tint: $pink-tint, co
     .brand-element-content
       +flex(1)
       padding: 0 0 0 40px
-      text-align: left
     .brand-element-code
       +display(flex)
-      +flex(1)
-      padding-left: 40px
       .highlight
         +flex(1)
 
