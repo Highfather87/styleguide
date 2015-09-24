@@ -1,0 +1,43 @@
+---
+layout: default
+nav: css
+file: vendor
+---
+
+<article class="style-element">
+  <aside class="style-element-info">
+    <h2 class="style-element-title">CSS</h2>
+
+    {% include files.html %}
+  </aside>
+
+  <section class="style-element-content">
+    <hgroup class="style-element-heading">
+      <p class="style-element-title">vendor.sass</p>
+    </hgroup>
+
+    <div class="style-element-description">
+      <p>Overriding <strong>vendor</strong> styling, like modals or background image containers.</p>
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+.background-image
+
+.ember-modal-dialog
+
+.ember-modal-overlay
+
+{% endhighlight %}
+
+{% highlight html %}
+the lazy background image loader
+
+the modal window
+
+the modal transparent overlay behind the window
+
+{% endhighlight %}
+    </div>
+  </section>
+</article>

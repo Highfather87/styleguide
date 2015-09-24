@@ -1,0 +1,108 @@
+---
+layout: default
+nav: css
+file: z-index
+---
+
+<article class="style-element">
+  <aside class="style-element-info">
+    <h2 class="style-element-title">CSS</h2>
+
+    {% include files.html %}
+  </aside>
+
+  <section class="style-element-content">
+    <hgroup class="style-element-heading">
+      <p class="style-element-title">z-index.sass</p>
+    </hgroup>
+
+    <div class="style-element-description">
+      <p>The <strong>stacking order</strong> of HTML elements.</p>
+      <p>By default:</p>
+      <ul>
+        <li>child elements are on top of their parents</li>
+        <li>for siblings, if it's later in the HTML code, it's on top of its siblings</li>
+      </ul>
+      <p><code>z-index</code> only works if you have <code>position</code> set to either <code>relative</code>, <code>absolute</code>, or <code>fixed.</code>.</p>
+      <p>All values are <strong>relative</strong>, meaning that an element </p>
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+.ember-modal-dialog
+.ember-modal-overlay
+
+html.search-open
+
+html.filters-open
+
+.site-navigation
+.site-overlay
+.site-search
+.site-added
+
+.boutiques-sticker
+.shop-sticker
+
+.site-header
+.site-top
+
+html.loading
+
+// Desktop only
+
++desktop
+  .boutiques-sticker
+    z-index: auto
+  .shop-sticker
+    z-index: auto
+  html.filters-open
+    .boutiques-filters
+      z-index: auto
+    .shop-filters
+      z-index: auto
+  .site-added
+    z-index: 402
+  .site-header
+    z-index: 401
+{% endhighlight %}
+
+{% highlight html %}
+the modals are on top of everything
+
+
+if the search is open, the stacking order is different
+
+if the filters are open (on mobile), the stacking order is different
+
+the sidemenu is on top of the rest when open
+the overlay is to prevent clicks on the content when the sidemenu is open
+the site search is above the content (but not the navigation)
+the "added to basket" window
+
+the stickers are the "show filters" buttons at the bottom
+
+
+the header is the last thing above the content
+the site top is the "back to top" button
+
+when a page is loading, the spinner is above the white overlay
+
+// Desktop only
+
+on desktop, the stacking order changes a bit
+everything is set to "auto" meaning we cancel the order we set on mobile
+
+
+
+
+
+
+
+
+site-added is above the header now
+
+{% endhighlight %}
+    </div>
+  </section>
+</article>

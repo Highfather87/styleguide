@@ -1,0 +1,554 @@
+---
+layout: default
+nav: css
+file: default
+---
+
+<article class="style-element">
+  <aside class="style-element-info">
+    <h2 class="style-element-title">CSS</h2>
+
+    {% include files.html %}
+  </aside>
+
+  <section class="style-element-content">
+    <hgroup class="style-element-heading">
+      <p class="style-element-title">default.sass</p>
+    </hgroup>
+
+    <div class="style-element-description">
+      <p>The TROUVA default <strong>theme</strong>. It contains all the <strong>variables</strong> of the website.</p>
+      <p>Basically, instead of defining the values in every different Sass files, we regroup everything here, so we don't have to touch the other files.<br>
+      If we want to change the whole theme, we just duplicate this file and change the values in only <strong>one location</strong>.</p>
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Colors
+
+$purple-dark: #CC7AB7
+$purple: #EFA8E0
+$purple-light: #FFE6F7
+
+$red-dark: #E57676
+$red: #FFB3B3
+$red-light: #FFEAE9
+
+$blue-dark: #47A3B2
+$blue: #72D0EB
+$blue-light: #DCFDFF
+
+$green-dark: #53A58E
+$green: #66CCB4
+$green-light: #D5EFE1
+
+$yellow-dark: #E5C645
+$yellow: #FFEA85
+$yellow-light: #FFF7CF
+
+$pink-dark: $red-dark
+$pink: $red
+$pink-light: $red-light
+
+$primary: $red-dark
+$secondary: hsl(0, 0%, 50%)
+
+$facebook: #3b5998
+$github: #333333
+$google-plus: #dd4b39
+$instagram: #3f729b
+$linkedin: #0077b5
+$pinterest: #cc2127
+$twitter: #55acee
+
+$white:     hsl(0, 0%, 100%)// Official
+$lightest:  hsl(0, 0%, 94%) // Official
+$lighter:   hsl(0, 0%, 90%)
+$lighte:    hsl(0, 0%, 80%)
+$light:     hsl(0, 0%, 67%) // Official
+$medium:    hsl(0, 0%, 43%) // Official
+$dark:      hsl(0, 0%, 30%)
+$black:     hsl(0, 0%, 10%)
+// $black:     hsl(0, 0%, 0%)  // Official
+
+$background: $lightest
+$border: $lighter
+$text: $medium
+$title: $black
+$link: $primary
+$visited: $light
+
+$background-colors: (black: $black, white: $white, red: $red, pink: $pink, blue: $blue, green: $green, yellow: $yellow, purple: $purple, red-light: $red-light, pink-light: $pink-light, blue-light: $blue-light, green-light: $green-light, yellow-light: $yellow-light, purple-light: $purple-light)
+
+$text-colors: (black: $black, white: $white, red: $red-dark, pink: $pink-dark, blue: $blue-dark, green: $green-dark, yellow: $yellow-dark, purple: $purple-dark, red-light: $red, pink-light: $pink, blue-light: $blue, green-light: $green, yellow-light: $yellow, purple-light: $purple)
+{% endhighlight %}
+
+{% highlight html %}
+.
+
+The official brand colours
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The primary colour is set to the dark red colour
+The secondary colour is medium grey
+
+The social brand colours
+
+
+
+
+
+
+
+The different shades of grey between black and white
+
+
+
+
+
+
+
+
+
+Some colours based on keywords
+
+
+
+
+
+
+The background colours for the landing page tiles
+
+The text colours for the landing page tiles
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Mixins
+
+$scrollbar-background: $lightest
+$scrollbar-thumb: $link
+{% endhighlight %}
+
+{% highlight html %}
+colours used in mixins.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Placeholders
+
+$arrow-border: $border
+
+$element-background: $white
+$element-border: $border
+$element-text: $text
+$element-hover-background: $white
+$element-hover-border: $link
+$element-hover-text: $link
+$element-active-background: $link
+$element-active-border: $link
+$element-active-text: $white
+$element-disabled-background: $border
+$element-disabled-border: $border
+$element-disabled-text: $light
+
+$element-icon-active-background: $link
+$element-icon-active-border: $link
+$element-icon-disabled-background: $border
+$element-icon-disabled-border: $border
+
+$loader-background: $white
+$loader-border: $link
+
+$section-text: $text
+{% endhighlight %}
+
+{% highlight html %}
+colours used in placeholders.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Base
+
+$site-background: $white
+$site-text: $text
+$site-link: $link
+
+$site-header-background: $site-background
+
+$html-loader: $link
+
+$container-border: $black
+{% endhighlight %}
+
+{% highlight html %}
+colours used in base.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Site
+
+$header-background: $white
+$header-active-background: $background
+$header-active-border: $white
+$header-active-text: $white
+$header-link-border: $link
+$header-tagline-text: $black
+$header-controls-link: $medium
+$header-controls-link-strong: $black
+$header-controls-link-fa: $link
+$header-controls-link-hover: $black
+$header-controls-link-hover-fa: $black
+$header-controls-link-active: $black
+$header-search-hover-background: $background
+$header-search-active-background: $black
+$header-search-active-text: $white
+
+$nav-background: $background
+$nav-border: $border
+$nav-scroll-background: $black
+$nav-strong: $black
+$nav-link: $black
+$nav-link-highlight: $link
+$nav-link-highlight-hover: $black
+
+$nav-tab: $black
+$nav-tab-unhover: $text
+$nav-active-tab-background: $background
+$nav-active-tab-text: $black
+
+$nav-sublink: $text
+$nav-sublink-hover: $black
+
+$nav-box-background: $white
+$nav-box-text: $text
+$nav-box-strong: $title
+
+$top-background: $background
+$top-hover-background: $black
+
+$footer-background: $black
+$footer-text: $dark
+$footer-link: $text
+$footer-link-hover: $white
+$footer-strong: $text
+
+$search-background: $background
+{% endhighlight %}
+
+{% highlight html %}
+colours used in site.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Buttons
+
+$button-loading-background: $border
+
+$button-disabled-background: $border
+$button-disabled-text: $light
+
+$button-default-background: $white
+$button-default-border: $border
+$button-default-text: $link
+$button-default-hover-background: $white
+$button-default-hover-border: $link
+$button-default-hover-text: $black
+$button-default-active-background: $link
+$button-default-active-border: $link
+$button-default-active-text: $white
+
+$button-primary-background: $link
+$button-primary-border: $link
+$button-primary-text: $white
+$button-primary-hover-background: $black
+$button-primary-hover-border: $black
+$button-primary-hover-text: $white
+
+$button-secondary-background: $text
+$button-secondary-border: $text
+$button-secondary-text: $white
+$button-secondary-hover-background: $black
+$button-secondary-hover-border: $black
+$button-secondary-hover-text: $white
+
+$button-green-background: $green
+$button-green-border: $green
+$button-green-text: $white
+$button-green-hover-background: $black
+$button-green-hover-border: $black
+$button-green-hover-text: $white
+
+$button-blue-background: $blue
+$button-blue-border: $blue
+$button-blue-text: $white
+$button-blue-hover-background: $black
+$button-blue-hover-border: $black
+$button-blue-hover-text: $white
+{% endhighlight %}
+
+{% highlight html %}
+colours used in buttons.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Lists
+
+$article-border: $black
+
+$entry-background: $lightest
+$entry-surtitle: $link
+$entry-title: $black
+$entry-description: $medium
+$entry-tags: $black
+{% endhighlight %}
+
+{% highlight html %}
+colours used in lists.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Elements
+
+$close-background: $background
+$close-text: $text
+$close-hover-background: $title
+$close-hover-text: $white
+
+$description-text: $text
+
+$label-text: $title
+
+$location-text: $light
+
+$name-text: $title
+
+$remove-link: $light
+
+$table-border: $border
+$table-text: $text
+
+$title-border: $title
+$title-text: $title
+{% endhighlight %}
+
+{% highlight html %}
+colours used in elements.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Components
+
+$box-data-text: $text
+$box-data-th: $light
+
+$box-filter-border: $border
+$box-filter-title: $title
+$box-filter-title-link: $light
+
+$box-results-background: $white
+$box-results-border: $border
+$box-results-link: $text
+$box-results-strong: $title
+$box-results-hover: $primary
+
+$box-sticker-border: $black
+
+$box-summary-border: $black
+
+$box-tags-text: $lighte
+
+$box-wishlist-background: $lightest
+$box-wishlist-strong: $title
+$box-wishlist-em: $text
+
+$form-link-text: $light
+$form-link-link: $text
+
+$goto-hover: $black
+
+$page-heading-background: none
+$page-heading-border: $black
+$page-heading-title: $title
+$page-heading-location: $text
+$page-heading-link: $light
+
+$box-hello-background: $lighter
+$box-hello-text: rgba(black, 0.48)
+$box-hello-strong: rgba(black, 0.71)
+
+$markdown-result-h2: $black
+$markdown-result-strong: $black
+
+$nav-breadcrumb-text: $light
+$nav-breadcrumb-link: $light
+$nav-breadcrumb-link-hover: $text
+
+$nav-links-title: $title
+$nav-links-link: $light
+$nav-links-link-hover: $text
+$nav-links-active-link: $title
+$nav-links-background: $background
+$nav-links-border: $title
+
+$product-details-border: $border
+$product-details-term: $light
+$product-details-terms-hover: $black
+$product-details-definition: $text
+
+$product-like-background: $background
+$product-like-link: $light
+$product-like-active-background: $link
+$product-like-active-link: $white
+
+$product-price-text: $text
+$product-price-del: $light
+$product-price-strong: $title
+
+$quote-text: $text
+$quote-fa: $primary
+
+$recent-border: $border
+
+$social-buttons-background: $white
+$social-buttons-text: $lighte
+$social-buttons-link: $light
+$social-buttons-link-hover: $white
+
+$tabs-background: $border
+$tabs-link: $text
+$tabs-active-link: $title
+
+$team-color: $red-dark
+
+$terms-em: $lighte
+{% endhighlight %}
+
+{% highlight html %}
+colours used in components.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Vendor
+
+$background-image: $white
+{% endhighlight %}
+
+{% highlight html %}
+colours used in vendor.sass
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Font
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-light.eot")
+  src: url("/fonts/lineto-brown-light.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-light.woff") format("woff"), url("/fonts/lineto-brown-light.ttf") format("truetype"), url("/fonts/lineto-brown-light.svg#lineto-brown-light") format("svg")
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-regular.eot")
+  src: url("/fonts/lineto-brown-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-regular.woff") format("woff"), url("/fonts/lineto-brown-regular.ttf") format("truetype"), url("/fonts/lineto-brown-regular.svg#lineto-brown-regular") format("svg")
+  font-weight: 400
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-italic.eot")
+  src: url("/fonts/lineto-brown-italic.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-italic.woff") format("woff"), url("/fonts/lineto-brown-italic.ttf") format("truetype"), url("/fonts/lineto-brown-italic.svg#lineto-brown-italic") format("svg")
+  font-weight: 400
+  font-style: italic
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-bold.eot")
+  src: url("/fonts/lineto-brown-bold.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-bold.woff") format("woff"), url("/fonts/lineto-brown-bold.ttf") format("truetype"), url("/fonts/lineto-brown-bold.svg#lineto-brown-bold") format("svg")
+  font-weight: 700
+  font-style: normal
+
+@font-face
+  font-family: "Brown"
+  src: url("/fonts/lineto-brown-bolditalic.eot")
+  src: url("/fonts/lineto-brown-bolditalic.eot?#iefix") format("embedded-opentype"), url("/fonts/lineto-brown-bolditalic.woff") format("woff"), url("/fonts/lineto-brown-bolditalic.ttf") format("truetype"), url("/fonts/lineto-brown-bolditalic.svg#lineto-brown-bolditalic") format("svg")
+  font-weight: 700
+  font-style: italic
+
+$font-family-sans-serif: "Brown", "ff-tisa-sans-web-pro", "TisaSansPro", "Myriad Pro", "Lucida Grande", Arial, sans-serif
+$font-family-serif: "Brown", "jubilat", Georgia, serif
+
+$font-family-primary: $font-family-sans-serif
+$font-family-secondary: $font-family-serif
+
+$font-size-normal: 13px
+
+$font-weight-normal: 400
+$font-weight-bold: 700
+
+$line-height-normal: 1.25
+$line-height-headings: 1.125
+{% endhighlight %}
+
+{% highlight html %}
+Brown font and font variables
+{% endhighlight %}
+    </div>
+
+    <div class="style-element-code">
+{% highlight sass %}
+// Miscellaneous
+
+$easing: ease-out
+$radius: 3px
+$small: 0.875em
+$speed: 100ms
+{% endhighlight %}
+
+{% highlight html %}
+other variables used here and there
+{% endhighlight %}
+    </div>
+  </section>
+</article>
