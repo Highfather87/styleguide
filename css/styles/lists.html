@@ -1,0 +1,56 @@
+---
+layout: default
+nav: css
+file: lists
+---
+
+<article class="style-element">
+  <aside class="style-element-info">
+    <h2 class="style-element-title">CSS</h2>
+
+    {% include files.html %}
+  </aside>
+
+  <section class="style-element-content">
+    <hgroup class="style-element-heading">
+      <p class="style-element-title">lists.sass</p>
+    </hgroup>
+
+    <div class="style-element-description">
+      <p>For <strong>lists</strong> of things, when you use <code>#each model as |thing|</code> basically.</p>
+      <p>There are <strong>9</strong> lists right now:</p>
+      <ul>
+        <li><code>articles</code>: the <code>/basket</code> articles</li>
+        <li><code>boutiques</code>: the <code>/boutiques</code> grid</li>
+        <li><code>categories</code>: the <code>/snap</code> categories</li>
+        <li><code>members</code>: the <code>/our-team</code> members</li>
+        <li><code>photos</code>: the <code>/products/:id</code> image gallery</li>
+        <li><code>products</code>: the <code>/shop</code> and <code>/me/wishlist</code> list of products</li>
+        <li><code>recents</code>: the recently viewed products</li>
+        <li><code>similars</code>: the similar products</li>
+        <li><code>rows</code>: the <code>/landing</code> and <code>/discover</code> entries</li>
+      </ul>
+      <p>The <strong>naming convention</strong> is:</p>
+      <ul>
+        <li>
+          <code>list-things</code> in <strong>plural</strong> for the <em>container</em>
+        </li>
+        <li>
+          <code>list-thing</code> in <strong>singular</strong> for the <em>individual items</em>
+        </li>
+      </ul>
+      <p>So for example, the list of products looks like this:</p>
+{% highlight html %}
+{% assign opening = '{{#each products as |product|}}' %}
+{% assign closing = '{{/each}}' %}
+<section class="list-products">
+  {{ opening }}
+    <article class="list-product">
+      <!-- Product content -->
+    </article>
+  {{ closing }}
+</section>
+{% endhighlight %}
+    </div>
+  </section>
+</article>
