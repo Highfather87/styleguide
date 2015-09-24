@@ -1,0 +1,1278 @@
+---
+layout: default
+nav: css
+file: components
+---
+<article class="style-element">
+  <aside class="style-element-info">
+    <h2 class="style-element-title">CSS</h2>
+    {% include files.html %}
+  </aside>
+
+  <section class="style-element-content">
+    <hgroup class="style-element-heading">
+      <p class="style-element-title">components.sass</p>
+    </hgroup>
+
+    <div class="style-element-description">
+      <p>
+        For more <strong>complex</strong>
+        things, like blocks that contain other elements, and also <strong>Ember components</strong>
+        .
+      </p>
+      <p>
+        Basically, if it can't be an element because it has too many parts, or has too many nesting levels, use a component.
+      </p>
+      <p>
+        The
+        <strong>naming convention</strong>
+        is
+        <strong>two words</strong>
+        (like with Ember components).
+      </p>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">boutique-follow</p>
+        <p class="style-element-explanation">The boutique follow button</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <strong class="boutique-follow"><span>Follow</span></strong> 
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-also</p>
+        <p class="style-element-explanation">The similar products box</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-also">
+          <p class="title">You may also like</p>
+          <section class="list-similars">
+            {% for i in (1..5) %}
+            <article class="list-similar">
+              <a>
+                <div class="background-image" style="background-image: url(http://placehold.it/200x200);"></div>
+                <strong class="name">Name</strong>
+                <p class="product-price">£90.00</p>
+              </a>
+            </article>
+            {% endfor %}
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-chapter</p>
+        <p class="style-element-explanation">The Our Story chapters</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <section class="box-chapter box-chapter-we-are">
+          <div class="container">
+            <h1 class="box-chapter-title">
+              <span>We are</span>
+              <img src="https://res.cloudinary.com/streethub/image/upload/v1441807329/main/trouva-line-white_2x.png" alt="Trouva white logo"></h1>
+            <h2 class="box-chapter-tagline"> <em>Origin</em>
+              : Trouvaille /ˈtruːvʌɪ/ noun. ‘A lucky find’.
+            </h2>
+            <p class="box-chapter-content">
+              A breath of
+              <strong>fresh</strong>
+              air in this world of identikit high streets and mass produced, trend-led ‘stuff’; Trouva works with a
+              <strong>handpicked selection</strong>
+              of the most inspired
+              <strong>independent shops</strong>
+              out there, to bring you a shoppable collection of beautiful,
+              <strong>unusual products</strong>
+              that stand out from the crowd.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-data</p>
+        <p class="style-element-explanation">Boutique data with opening hours, email, shipping terms...</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <table class="box-data">
+          <tr class="open">
+            <th>Monday</th>
+            <td>From 11:00 to 18:30</td>
+          </tr>
+          <tr class="closed">
+            <th>Tuesday</th>
+            <td>Closed</td>
+          </tr>
+          <tr class="open">
+            <th>Wednesday</th>
+            <td>From 11:00 to 18:30</td>
+          </tr>
+          <tr class="open">
+            <th>Thursday</th>
+            <td>From 11:00 to 18:30</td>
+          </tr>
+          <tr class="open">
+            <th>Friday</th>
+            <td>From 11:00 to 18:30</td>
+          </tr>
+          <tr class="open">
+            <th>Saturday</th>
+            <td>From 11:00 to 18:30</td>
+          </tr>
+          <tr class="open">
+            <th>Sunday</th>
+            <td>From 12:00 to 17:00</td>
+          </tr>
+        </table>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-disclaimer</p>
+        <p class="style-element-explanation">Basket boxes for shipping and returns</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-disclaimer">
+          <h3 class="title">Returns</h3>
+          <p>
+            With Trouva’s fuss-free returns policy, you have 14 days from receiving your order, to return your item(s) to the boutique directly, for either an exchange or refund. No questions asked.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-empty</p>
+        <p class="style-element-explanation">When a list is empty</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-empty">
+          <p>You aren't following any boutiques yet!</p>
+          <a class="button-discover">Discover boutiques</a>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-filter</p>
+        <p class="style-element-explanation">The shop filters</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <section class="box-filter">
+          <p>
+            Sizes
+            <a>Clear</a>
+          </p>
+          <ul class="form-list">
+            <li>
+              <a>
+                <span></span>
+                S
+              </a>
+            </li>
+            <li>
+              <a>
+                <span></span>
+                M
+              </a>
+            </li>
+            <li>
+              <a>
+                <span></span>
+                L
+              </a>
+            </li>
+            <li>
+              <a>
+                <span></span>
+                XL
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-goto</p>
+        <p class="style-element-explanation">The "Go to basket" link from the product page</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="box-goto">
+          <p class="product-quantity">
+            <span class="addon">Quantity</span>
+
+            <div class="form-select">
+              <select class="select">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select> <i class="fa fa-angle-down"></i>
+            </div>
+
+             </p>
+          <a href="/basket">
+            <span>Go to basket</span> <i class="fa fa-angle-right"></i>
+          </a>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-hello</p>
+        <p class="style-element-explanation">The hello banner below the header</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-hello">
+          <div class="container">
+            <p>
+              <strong>Handpicked from independent shops</strong> <em>- Free worldwide shipping over £50 | Click &amp; collect | 1 hour Shutl delivery</em> 
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-info</p>
+        <p class="style-element-explanation">The product info right box</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-info" style="max-width: 380px;">
+          <h1 class="name">Blue Triangle Rope Basket #11</h1>
+          <p class="product-price">£45.00</p>
+          <form class="cart-button">
+            
+            <a class="button-add-to-basket">Add to basket</a>
+          </form>
+          <dl class="product-details">
+            <dt class="active">
+              <i class="fa fa-angle-down"></i>
+              Description
+            </dt>
+            <dd class="active">
+              These rope baskets have been made my the awesome Gemma Patford in her home studio in Melbourne, Australia.
+              <br>
+              <br>
+              -Fun and colourful baskets/flats
+              <br>
+              -Dipped in acrylic paint to provide a hard and durable finish
+              <br>
+              -Perfect for chucking your keys in when coming home, keeping your make up in, your knitting essentials, and other bits and bobs.
+              <br>-Display as a piece of art</dd>
+
+            
+            <dt>
+              <i class="fa fa-angle-down"></i>
+              Shipping
+            </dt>
+            <dd>5 days</dd>
+
+            <dt>
+              <i class="fa fa-angle-down"></i>
+              Returns
+            </dt>
+            <dd>
+              With Trouva's fuss-free returns policy, you have 14 days from receiving your order, to return your item(s) to the boutique directly, for either an exchange or refund. No questions asked.
+            </dd>
+
+            <dt class="active">
+              <i class="fa fa-angle-down"></i>
+              Boutique
+            </dt>
+            <dd class="active">
+              <a href="/shop/boutique/54f491cd6596d10300651fe6">
+                <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/t_boutique_cover_thumbnail_desktop/v1438268149/brand/54f491cd6596d10300651fe4/orbxk28ogeihsen2auco.png&quot;)">
+                   </div>
+              </a>
+              <strong class="name">Radstudio</strong>
+              <em class="location">Outside London</em>
+              <a href="/shop/boutique/54f491cd6596d10300651fe6" class="button-shop-this-boutique">Shop this boutique</a>
+              <strong class="boutique-follow"><span>Follow</span></strong> 
+            </dd>
+
+             </dl>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-mini</p>
+        <p class="style-element-explanation">The basket popup window</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <article class="box-mini">
+          <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1435916332/brand/54f491cd6596d10300651fe4/danemtjmgdgg3qbieang.jpg&quot;)">
+             </div>
+          <strong class="name">Blue Triangle Rope Basket #11</strong>
+          <p class="product-price">£45.00</p>
+           </article>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-press</p>
+        <p class="style-element-explanation">List of press logos in the footer</p>
+      </aside>
+      <main class="style-element-thing-main" style="background: #1a1a1a;">
+        <div class="box-press">
+          <em>As seen in</em>
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/the-telegraph.png" alt="The Telegraph logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/drapers.png" alt="Drapers logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807486/press-white/company-magazine.png" alt="Company Magazine logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/bbc-one.png" alt="BBC One logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/the-guardian.png" alt="The Guardian logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/london-evening-standard.png" alt="London Evening Standard logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807485/press-white/the-sunday-times.png" alt="The Sunday Times logo">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807486/press-white/metro.png" alt="Metro logo"></div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-profile</p>
+        <p class="style-element-explanation">The shop boutique header</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-profile">
+          <div class="box-profile-intro">
+            <img class="box-profile-thumbnail" src="https://res.cloudinary.com/streethub/image/upload/t_boutique_cover_thumbnail_desktop/v1439203348/brand/5399a5c7a1057c0200d9928c/ergpmlga4tq85zzqnzbp.png">
+
+            <div class="box-profile-heading has-avatar">
+              <img class="founder" src="https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_100,h_100/t_boutique_founder_image_desktop/v1439203425/brand/5399a5c7a1057c0200d9928c/vrmew7riwfy7c9c8ucwm.jpg">
+
+              <h1 class="name">Lomography</h1>
+
+              <p class="location">Soho</p>
+
+              <p class="box-tags">
+                <em>Style:</em>
+                <a>Contemporary</a>
+              </p>
+            </div>
+
+            <blockquote class="quote">
+              Here you’ll find the full range of Lomographic products sheltered by the biggest Lomowall in the United Kingdom! No less than 14,000 Lomographs!
+            </blockquote>
+
+            <p class="box-profile-buttons">
+              <strong class="boutique-follow">
+                <span>Follow</span>
+              </strong>
+              <a class="button-more">
+                <i class="fa fa-angle-down"></i>
+                <strong>Learn more</strong>
+                <em>Close</em>
+              </a>
+            </p>
+          </div>
+
+          <div class="box-profile-more">
+            <div class="box-profile-description">
+              <p class="description">
+                The Lomography Gallery Store London is located in the unique Newburgh Quarter just off Carnaby Street in Soho.
+              </p>
+            </div>
+
+            <div class="box-profile-data">
+              <table class="box-data">
+
+                <tr class="open">
+                  <th>Monday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Tuesday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Wednesday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Thursday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Friday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Saturday</th>
+                  <td>From 11:00 to 19:00</td>
+                </tr>
+                <tr class="open">
+                  <th>Sunday</th>
+                  <td>From 12:00 to 17:00</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="box-profile-map">
+              <div class="map-image">
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=W1F7RE&amp;markers=W1F7RE&amp;zoom=13&amp;scale=false&amp;size=300x200&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;key=AIzaSyA_kH32ixHNa_MDdjMSucIIul0KC5DmRWM">
+                <address>3, Newburgh Street, London W1F 7RE</address>
+
+                 </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-results</p>
+        <p class="style-element-explanation">List of search results</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <ul class="box-results">
+          <li>
+            <a>Future &amp; Found</a>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-retailer</p>
+        <p class="style-element-explanation">Not used</p>
+      </aside>
+      <main class="style-element-thing-main"></main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-security</p>
+        <p class="style-element-explanation">Payment security box</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="box-security">
+          <img src="https://res.cloudinary.com/streethub/image/upload/v1441807677/security/credit-cards.png" alt="Visa, MasterCard, and Maestro credit card icons"></p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-social</p>
+        <p class="style-element-explanation">Social follow icons</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <span class="box-social">
+          <a class="box-social-twitter" href="https://twitter.com/wearetrouva">
+            <i class="fa fa-twitter"></i>
+          </a>
+
+          <a class="box-social-instagram" href="https://instagram.com/wearetrouva">
+            <i class="fa fa-instagram"></i>
+          </a>
+
+          <a class="box-social-facebook" href="https://www.facebook.com/wearetrouva">
+            <i class="fa fa-facebook"></i>
+          </a>
+
+          <a class="box-social-pinterest" href="https://pinterest.com/wearetrouva">
+            <i class="fa fa-pinterest-p"></i>
+          </a>
+        </span>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-sticker</p>
+        <p class="style-element-explanation">Mobile sticky footer</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-sticker" style="position: relative;">
+          <a id="cancel-filters" class="button-cancel-filters" {{action model.actions.clearAllFilters}}>Cancel</a>
+          <a id="apply-filters" class="button-apply-filters" {{action model.actions.toggleMobileFilters}}>Apply</a>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-summary</p>
+        <p class="style-element-explanation">Basket summary</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-summary" style="max-width: 380px;">
+          <h4 class="title">Summary</h4>
+          <table class="table">
+            <tr>
+              <th>Subtotal</th>
+              <td>£959.00</td>
+            </tr>
+            <tr style="">
+              <th>
+                Estimated shipping
+                 </th>
+              <td>Free</td>
+            </tr>
+            
+            <tr>
+              <th>Total</th>
+              <td>£959.00</td>
+            </tr>
+          </table>
+          <a class="button-continue-to-checkout">
+            <i class="fa fa-lock"></i>
+            Continue to checkout
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-tags</p>
+        <p class="style-element-explanation">List of tags for the boutique styles</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="box-tags">
+          <em>Style:</em>
+          <a>Contemporary</a>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">box-wishlist</p>
+        <p class="style-element-explanation">Product wishlist CTA</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="box-wishlist">
+          <span class="product-like">
+            
+            <a class="button-add-to-wishlist">
+              <i class="fa fa-heart"></i>
+              Add to wishlist
+            </a>
+          </span>
+          <strong>Like this item?</strong>
+          <em>Add it to your favourites to revisit it later.</em>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-checkbox</p>
+        <p class="style-element-explanation">Checkbox container</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="form-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">Remember me</label>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-email</p>
+        <p class="style-element-explanation">Form email box</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="form-email">
+          <label class="label">Email</label>
+          <input placeholder="hello@example.com" name="email" type="email" class="input ember-text-field">
+           </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-link</p>
+        <p class="style-element-explanation">Form link between login/signup</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="form-link">
+          Already an account?
+          <a href="/login">Login</a>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-list</p>
+        <p class="style-element-explanation">Form list of checkboxes</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <ul class="form-list">
+          <li>
+            <a class="">
+              <span></span>
+              Earrings
+            </a>
+          </li>
+          <li>
+            <a class="">
+              <span></span>
+              Necklaces
+            </a>
+          </li>
+          <li>
+            <a class="">
+              <span></span>
+              Rings
+            </a>
+          </li>
+          <li>
+            <a class="">
+              <span></span>
+              Bracelets
+            </a>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-password</p>
+        <p class="style-element-explanation">Form password container</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="form-password">
+          <label class="label">Password</label>
+          <input placeholder="••••••••" name="password" type="password" class="input ember-text-field">
+           </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-radios</p>
+        <p class="style-element-explanation">Form radio buttons</p>
+      </aside>
+      <main class="style-element-thing-main">
+
+        <div class="form-radios">
+          <label class="radio">
+            <input type="radio">Yes</label>
+          <label class="radio">
+            <input type="radio">No</label>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-select</p>
+        <p class="style-element-explanation">Form select container</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="form-select">
+          <select class="select">
+            
+            <option value="24">24 per page</option>
+            <option value="48">48 per page</option>
+            <option value="96">96 per page</option>
+            <option value="192">192 per page</option>
+          </select>
+
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-submit</p>
+        <p class="style-element-explanation">Form submit button container</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div id="form-submit" class="form-submit">
+          <button class="button-submit  ">Login</button>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">form-text</p>
+        <p class="style-element-explanation">Form simple text with optional button</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="form-text">
+          <label class="label">
+            But don’t fret, you can use the search box, just enter in some keywords for what you were looking for.
+          </label>
+          <a class="button-search">Search</a>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">main-photo</p>
+        <p class="style-element-explanation">Main product image</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="main-photo" style="float: none;">
+          <img src="https://res.cloudinary.com/streethub/image/upload/c_scale,fl_progressive,w_460/v1435662498/brand/530df3e16aa95300000008cf/htdlpxapuyeycl7nrep3.jpg">
+          <span></span>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">map-image</p>
+        <p class="style-element-explanation">Google Map static image of boutique location</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="map-image">
+          <img src="https://i.imgur.com/PvLVN0E.png">
+          <address>225A Brecknock Road, Tufnell Park, London, N19 5AA</address>
+
+           </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">markdown-result</p>
+        <p class="style-element-explanation">Generated HTML from markdown container</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="markdown-result">
+          <h2 id="whyshopwithus">Why shop with us?</h2>
+
+          <p>
+            <strong>Boutique shopping made easy</strong>
+          </p>
+
+          <p>
+            Independent shops have some of the best products out there, but they’re not always the most convenient of shopping destinations. We bring all those gorgeous products to your fingertips online; simple, easy and as convenient as anything else in the modern world
+          </p>
+
+          <p>
+            Even better still, as you shop you’re supporting these guardians of individuality on our highstreets; the independents shops in our communities, whose amazing owners curate and showcase an inspired selection of products that are both functional and covetable. Your support is integral in keeping these shops afloat as they compete against the high street heavyweights, so keep up the good work.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">nav-breadcrumb</p>
+        <p class="style-element-explanation">Product breadcrumb below the header</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p id="5576c9a058d9e176104988e8" class="nav-breadcrumb">
+          <a href="/">Home</a>
+          <a href="/">Jewellery</a>
+          <a href="/">Necklaces</a>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">nav-controls</p>
+        <p class="style-element-explanation">Navigation for list of products</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <nav class="nav-controls">
+          <p class="label">
+            <strong>145</strong>
+            items
+          </p>
+          <div class="form-select">
+            <select class="select">
+              
+              <option value="-qs">Recommended</option>
+              <option value="-updated_at">Newest first</option>
+              <option value="updated_at">Oldest first</option>
+              <option value="price">Lowest price</option>
+              <option value="-price">Highest price</option>
+            </select>
+
+            <i class="fa fa-angle-down"></i>
+          </div>
+          <div class="form-select">
+            <select class="select">
+              
+              <option value="24">24 per page</option>
+              <option value="48">48 per page</option>
+              <option value="96">96 per page</option>
+              <option value="192">192 per page</option>
+            </select>
+
+            <i class="fa fa-angle-down"></i>
+          </div>
+        </nav>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">nav-links</p>
+        <p class="style-element-explanation">Sidemenu for static pages</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="nav-links">
+          <a>
+            <i class="fa fa-angle-down"></i>
+            Careers
+          </a>
+          <ul>
+            <li>
+              <a href="/pages/faqs">FAQs</a>
+            </li>
+            <li>
+              <a href="/pages/careers" class="active">Careers</a>
+            </li>
+            <li>
+              <a href="/pages/our-story">Our Story</a>
+            </li>
+            <li>
+              <a href="/pages/deliveryreturns">Delivery &amp; Returns</a>
+            </li>
+            <li>
+              <a href="/pages/whyus">Why shop with us?</a>
+            </li>
+            <li>
+              <a href="/pages/termsconditions">Terms &amp; Conditions</a>
+            </li>
+            <li>
+              <a href="/pages/privacypolicy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/pages/contactus">Contact Us</a>
+            </li>
+            <li>
+              <a href="/pages/press">Press</a>
+            </li>
+            <li>
+              <a href="/pages/streethubfaqs">StreetHub FAQs</a>
+            </li>
+            <li>
+              <a href="/pages/sell-with-us">Sell with us</a>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">nav-pagination</p>
+        <p class="style-element-explanation">Pagination for list of things</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <nav class="nav-pagination">
+          <p>
+            <a rel="previous" class="disabled">Previous page</a>
+            <a rel="next">Next page</a>
+          </p>
+
+          <ul>
+            <li>
+              <a href="/shop/boutique/524c2a0bf8aa450200000019" class="active">1</a>
+            </li>
+            <li>
+              <a href="/shop/boutique/524c2a0bf8aa450200000019?page=2">2</a>
+            </li>
+            <li>
+              <a href="/shop/boutique/524c2a0bf8aa450200000019?page=3">3</a>
+            </li>
+            <li>
+              <a href="/shop/boutique/524c2a0bf8aa450200000019?page=4">4</a>
+            </li>
+          </ul>
+
+           </nav>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">nav-tabs</p>
+        <p class="style-element-explanation">Navigation menu for account</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="nav-tabs">
+          <ul>
+            <li>
+              <a href="/me/wishlist" class="active">Wishlist</a>
+            </li>
+            <li>
+              <a href="/me/following">Following</a>
+            </li>
+            <li>
+              <a href="#">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">out-of-stock</p>
+        <p class="style-element-explanation">Out of stock box on product page</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="out-of-stock">
+          <span class="message message-error">Out of stock</span>
+          <form>
+            <label class="title">Get notified by email when it's back in stock!</label>
+            <div class="form-email">
+              <input id="ember813" name="email" type="email" class="input ember-text-field">
+               </div>
+            <div id="ember822" class="form-submit">
+              <button class="button-submit   " data-ember-action="823">Notify me</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">page-heading</p>
+        <p class="style-element-explanation">Heading for shop template</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <hgroup class="page-heading">
+          <div class="container">
+            <h1 class="name">For Her</h1>
+            <p class="description">
+              Luxury nightwear, stylish handbags, artisan chocolates are but a few of the presents to be browsed in our selection of the best gifts for her.
+            </p>
+          </div>
+        </hgroup>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">product-details</p>
+        <p class="style-element-explanation">List of product info elements</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <dl class="product-details" style="max-width: 380px;">
+          <dt class="active">
+            <i class="fa fa-angle-down"></i>
+            Description
+          </dt>
+          <dd class="active">
+            Add an industrial edge to your living room with this concrete tube vase.
+            <br>
+            <br>
+            -Rustic painted finish
+            <br>-Comes dipped in either black or white glaze</dd>
+
+          <dt>
+            <i class="fa fa-angle-down"></i>
+            Details
+          </dt>
+          <dd>
+            Material: Concrete
+            <br>
+            Measurements: 6cm D x 20cm H
+            <br></dd>
+
+          <dt>
+            <i class="fa fa-angle-down"></i>
+            Shipping
+          </dt>
+          <dd>Delivery within 3-5 days.</dd>
+
+          <dt>
+            <i class="fa fa-angle-down"></i>
+            Returns
+          </dt>
+          <dd>
+            With Trouva's fuss-free returns policy, you have 14 days from receiving your order, to return your item(s) to the boutique directly, for either an exchange or refund. No questions asked.
+          </dd>
+
+          <dt class="active">
+            <i class="fa fa-angle-down"></i>
+            Boutique
+          </dt>
+          <dd class="active">
+            <a href="/shop/boutique/524c2a0bf8aa450200000019">
+              <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/t_boutique_cover_thumbnail_desktop/brand/530df3e16aa95300000008cf/EqeSwy5MRKaNpOvvAdcm&quot;)">
+                 </div>
+            </a>
+            <strong class="name">Future &amp; Found</strong>
+            <em class="location">Camden</em>
+            <a href="/shop/boutique/524c2a0bf8aa450200000019" class="button-shop-this-boutique">Shop this boutique</a>
+            <strong class="boutique-follow">
+              <span class="active">Following</span>
+            </strong>
+          </dd>
+
+           </dl>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">product-like</p>
+        <p class="style-element-explanation">Heart icon to wishlist a product</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <span class="product-like">
+          <strong class="product-like-heart" style="opacity: 1;">
+            <i class="fa fa-heart"></i>
+          </strong>
+          <em class="product-like-text"><span>Add to Wishlist</span>
+            <span>In Wishlist!</span></em> 
+
+           </span>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">product-price</p>
+        <p class="style-element-explanation">Product price with/without discount</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="product-price"> <del>£45.00</del>
+          <strong>£34.00</strong>
+        </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">product-quantity</p>
+        <p class="style-element-explanation">Product quantity picker</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="product-quantity">
+          <span class="addon">Quantity</span>
+
+          <div class="form-select">
+            <select class="select">
+              
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+
+            <i class="fa fa-angle-down"></i>
+          </div>
+
+           </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">product-size</p>
+        <p class="style-element-explanation">Product selected size</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <p class="product-size">
+          <em>Size/Variation:</em>
+          <strong>36</strong>
+
+           </p>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">recent-viewed</p>
+        <p class="style-element-explanation">Recently viewed products</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <section id="ember828" class="recent-viewed">
+          <div class="container">
+            <p class="title">Recently viewed</p>
+
+            <div class="list-recents">
+              <article class="list-recent">
+                <a href="/products/554e425717f2450300acbd35">
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1431194961/ij44bmcjvxdpfjsrbecf.jpg&quot;)">
+                     </div>
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/t_product_gallery_mobile/v1431191982/brand/530df3e16aa95300000008cf/m5h6rxjfp4fcttx58zph.jpg&quot;)">
+                     </div>
+                  <strong class="name">Thing Industries The Cabin</strong>
+                  <p class="product-price"> <del>£45.00</del>
+                    <strong>£34.00</strong>
+                  </p>
+                </a>
+                <span class="product-like">
+                  <strong class="product-like-heart" style="opacity: 1;">
+                    <i class="fa fa-heart"></i>
+                  </strong>
+                  <em class="product-like-text">
+                    <span>Add to Wishlist</span>
+                    <span>In Wishlist!</span>
+                  </em>
+
+                   </span>
+                <p class="remove">
+                  <a>Remove</a>
+                </p>
+              </article>
+              <article class="list-recent">
+                <a href="/products/554fc989c9351e03009d3611">
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1431291819/ggwzv1rcgill2q73xfc7.jpg&quot;)">
+                     </div>
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/t_product_gallery_mobile/v1431291778/brand/530df3e16aa95300000008cf/ga7ik5tiifaqk1r9eudk.jpg&quot;)">
+                     </div>
+                  <strong class="name">Cox &amp; Cox Dipped Concrete Vase</strong>
+                  <p class="product-price">£18.00</p>
+                </a>
+                <span class="product-like">
+                  <strong class="product-like-heart" style="opacity: 1;">
+                    <i class="fa fa-heart"></i>
+                  </strong>
+                  <em class="product-like-text">
+                    <span>Add to Wishlist</span>
+                    <span>In Wishlist!</span>
+                  </em>
+
+                   </span>
+                <p class="remove">
+                  <a>Remove</a>
+                </p>
+              </article>
+              <article class="list-recent">
+                <a href="/products/559278d00ccb3c03005b1d55">
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1435662498/brand/530df3e16aa95300000008cf/htdlpxapuyeycl7nrep3.jpg&quot;)">
+                     </div>
+                  
+                  <strong class="name">Moustache Grooming Kit</strong>
+                  <p class="product-price">£18.00</p>
+                </a>
+                <span class="product-like">
+                  <strong class="product-like-heart" style="opacity: 1;">
+                    <i class="fa fa-heart"></i>
+                  </strong>
+                  <em class="product-like-text">
+                    <span>Add to Wishlist</span>
+                    <span>In Wishlist!</span>
+                  </em>
+
+                   </span>
+                <p class="remove">
+                  <a>Remove</a>
+                </p>
+              </article>
+              <article class="list-recent">
+                <a href="/products/5574176e21979b0300e8b5ea">
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1433703222/brand/5329b24f952f36020000000e/crfqtrvbz7cidiivvid2.jpg&quot;)">
+                     </div>
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/t_product_gallery_mobile/v1435329425/brand/5329b24f952f36020000000e/t3ma1fwhlw9jobqgmitv.jpg&quot;)">
+                     </div>
+                  <strong class="name">Gold Plated Moonstone Deco Ring</strong>
+                  <p class="product-price">£118.00</p>
+                </a>
+                <span class="product-like">
+                  <strong class="product-like-heart" style="opacity: 1;">
+                    <i class="fa fa-heart"></i>
+                  </strong>
+                  <em class="product-like-text">
+                    <span>Add to Wishlist</span>
+                    <span>In Wishlist!</span>
+                  </em>
+
+                   </span>
+                <p class="remove">
+                  <a>Remove</a>
+                </p>
+              </article>
+              <article class="list-recent">
+                <a href="/products/55b201487850b6030041bcba">
+                  <div class="background-image" style="background-image:url(&quot;https://res.cloudinary.com/streethub/image/upload/c_fill,f_auto,w_350,q_80/v1437729081/brand/54f491cd6596d10300651fe4/vdt5sozdfs3cdvzfdujv.jpg&quot;)">
+                     </div>
+                  
+                  <strong class="name">Seventy Tree  Born To Be Rad Print</strong>
+                  <p class="product-price">£25.00</p>
+                </a>
+                <span class="product-like">
+                  <strong class="product-like-heart" style="opacity: 1;">
+                    <i class="fa fa-heart"></i>
+                  </strong>
+                  <em class="product-like-text">
+                    <span>Add to Wishlist</span>
+                    <span>In Wishlist!</span>
+                  </em>
+
+                   </span>
+                <p class="remove">
+                  <a>Remove</a>
+                </p>
+              </article>
+            </div>
+          </div>
+
+           </section>
+      </main>
+    </div>
+
+    <div class="style-element-thing">
+      <aside class="style-element-thing-side">
+        <p class="style-element-subtitle">social-buttons</p>
+        <p class="style-element-explanation">Sharing buttons on the product page</p>
+      </aside>
+      <main class="style-element-thing-main">
+        <div class="social-buttons">
+          <em>Share</em>
+
+          <p>
+            <a class="share-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftrouva.com%2Fproducts%2F554fc989c9351e03009d3611%2FCox%20%26%20Cox%20Dipped%20Concrete%20Vase&amp;text=Found%20on%20%40wearetrouva%3A%20Cox%20%26%20Cox%20Dipped%20Concrete%20Vase">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </p>
+
+          <p>
+            <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftrouva.com%2Fproducts%2F554fc989c9351e03009d3611%2FCox%20%26%20Cox%20Dipped%20Concrete%20Vase">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </p>
+
+          <p>
+            <a class="share-pinterest" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Ftrouva.com%2Fproducts%2F554fc989c9351e03009d3611%2FCox%20%26%20Cox%20Dipped%20Concrete%20Vase&amp;media=https%3A%2F%2Fres.cloudinary.com%2Fstreethub%2Fimage%2Fupload%2Fv1431291771%2Fbrand%2F530df3e16aa95300000008cf%2Fq1ixmobkqozywbmovrw6.jpg&amp;description=Add%20an%20industrial%20edge%20to%20your%20living%20room%20with%20this%20concrete%20tube%20vase.%0A%0A-Rustic%20painted%20finish%0A-Comes%20dipped%20in%20either%20black%20or%20white%20glaze">
+              <i class="fa fa-pinterest"></i>
+            </a>
+          </p>
+        </div>
+      </main>
+    </div>
+  </section>
+</article>
